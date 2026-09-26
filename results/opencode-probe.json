@@ -1,15 +1,187 @@
 {
   "source": "opencode-zen+go",
-  "generated_at": "2026-09-26T07:56:38.236Z",
+  "generated_at": "2026-09-26T08:19:35.188Z",
   "totals": {
-    "total": 1,
-    "alive": 1,
+    "total": 7,
+    "alive": 7,
     "alive_pct": 100,
-    "survived_all_3": 1,
-    "survived_pct_of_total": 100,
-    "survived_pct_of_alive": 100
+    "survived_all_3": 4,
+    "survived_pct_of_total": 57.1,
+    "survived_pct_of_alive": 57.1
   },
   "models": [
+    {
+      "id": "ling-3.0-flash-fin-free",
+      "provider": "opencode",
+      "ctx": 262144,
+      "reasoning": true,
+      "probe_ok": 1,
+      "probe_attempts": 1,
+      "alive": true,
+      "inputs": [
+        {
+          "input_id": "code-fix",
+          "kind": "fix-bug",
+          "ok": true,
+          "usable": true,
+          "why": "code-shape",
+          "latency_ms": 7836,
+          "chars": 271,
+          "error": null
+        },
+        {
+          "input_id": "code-gen",
+          "kind": "implement",
+          "ok": true,
+          "usable": true,
+          "why": "code-shape",
+          "latency_ms": 6277,
+          "chars": 236,
+          "error": null
+        },
+        {
+          "input_id": "agent-plan",
+          "kind": "agentic",
+          "ok": true,
+          "usable": false,
+          "why": "no-numbered-list",
+          "latency_ms": 11762,
+          "chars": 2029,
+          "error": null
+        }
+      ],
+      "usable_count": 2,
+      "survived_all": false
+    },
+    {
+      "id": "space-bunny-free",
+      "provider": "opencode",
+      "ctx": 1048576,
+      "reasoning": true,
+      "probe_ok": 1,
+      "probe_attempts": 1,
+      "alive": true,
+      "inputs": [
+        {
+          "input_id": "code-fix",
+          "kind": "fix-bug",
+          "ok": true,
+          "usable": true,
+          "why": "code-shape",
+          "latency_ms": 7552,
+          "chars": 466,
+          "error": null
+        },
+        {
+          "input_id": "code-gen",
+          "kind": "implement",
+          "ok": true,
+          "usable": true,
+          "why": "code-shape",
+          "latency_ms": 7879,
+          "chars": 219,
+          "error": null
+        },
+        {
+          "input_id": "agent-plan",
+          "kind": "agentic",
+          "ok": true,
+          "usable": true,
+          "why": "numbered-plan",
+          "latency_ms": 24478,
+          "chars": 2766,
+          "error": null
+        }
+      ],
+      "usable_count": 3,
+      "survived_all": true
+    },
+    {
+      "id": "mimo-v2.6-flash-free",
+      "provider": "opencode",
+      "ctx": 200000,
+      "reasoning": true,
+      "probe_ok": 1,
+      "probe_attempts": 1,
+      "alive": true,
+      "inputs": [
+        {
+          "input_id": "code-fix",
+          "kind": "fix-bug",
+          "ok": true,
+          "usable": true,
+          "why": "code-shape",
+          "latency_ms": 12564,
+          "chars": 319,
+          "error": null
+        },
+        {
+          "input_id": "code-gen",
+          "kind": "implement",
+          "ok": true,
+          "usable": true,
+          "why": "code-shape",
+          "latency_ms": 8316,
+          "chars": 242,
+          "error": null
+        },
+        {
+          "input_id": "agent-plan",
+          "kind": "agentic",
+          "ok": true,
+          "usable": true,
+          "why": "numbered-plan",
+          "latency_ms": 42221,
+          "chars": 2855,
+          "error": null
+        }
+      ],
+      "usable_count": 3,
+      "survived_all": true
+    },
+    {
+      "id": "nemotron-3-ultra-free",
+      "provider": "opencode",
+      "ctx": 1000000,
+      "reasoning": true,
+      "probe_ok": 1,
+      "probe_attempts": 1,
+      "alive": true,
+      "inputs": [
+        {
+          "input_id": "code-fix",
+          "kind": "fix-bug",
+          "ok": true,
+          "usable": true,
+          "why": "code-shape",
+          "latency_ms": 9223,
+          "chars": 309,
+          "error": null
+        },
+        {
+          "input_id": "code-gen",
+          "kind": "implement",
+          "ok": true,
+          "usable": true,
+          "why": "code-shape",
+          "latency_ms": 23038,
+          "chars": 252,
+          "error": null
+        },
+        {
+          "input_id": "agent-plan",
+          "kind": "agentic",
+          "ok": true,
+          "usable": false,
+          "why": "no-numbered-list",
+          "latency_ms": 21864,
+          "chars": 1900,
+          "error": null
+        }
+      ],
+      "usable_count": 2,
+      "survived_all": false
+    },
     {
       "id": "big-pickle",
       "provider": "opencode",
@@ -25,8 +197,8 @@
           "ok": true,
           "usable": true,
           "why": "code-shape",
-          "latency_ms": 8904,
-          "chars": 275,
+          "latency_ms": 8581,
+          "chars": 392,
           "error": null
         },
         {
@@ -35,8 +207,51 @@
           "ok": true,
           "usable": true,
           "why": "code-shape",
-          "latency_ms": 8331,
+          "latency_ms": 6981,
           "chars": 227,
+          "error": null
+        },
+        {
+          "input_id": "agent-plan",
+          "kind": "agentic",
+          "ok": true,
+          "usable": false,
+          "why": "no-numbered-list",
+          "latency_ms": 23062,
+          "chars": 1674,
+          "error": null
+        }
+      ],
+      "usable_count": 2,
+      "survived_all": false
+    },
+    {
+      "id": "muse-spark-1.3-contributor-free",
+      "provider": "opencode",
+      "ctx": 1048576,
+      "reasoning": true,
+      "probe_ok": 1,
+      "probe_attempts": 1,
+      "alive": true,
+      "inputs": [
+        {
+          "input_id": "code-fix",
+          "kind": "fix-bug",
+          "ok": true,
+          "usable": true,
+          "why": "code-shape",
+          "latency_ms": 16179,
+          "chars": 257,
+          "error": null
+        },
+        {
+          "input_id": "code-gen",
+          "kind": "implement",
+          "ok": true,
+          "usable": true,
+          "why": "code-shape",
+          "latency_ms": 9632,
+          "chars": 177,
           "error": null
         },
         {
@@ -45,8 +260,51 @@
           "ok": true,
           "usable": true,
           "why": "numbered-plan",
-          "latency_ms": 27797,
-          "chars": 3042,
+          "latency_ms": 22531,
+          "chars": 1150,
+          "error": null
+        }
+      ],
+      "usable_count": 3,
+      "survived_all": true
+    },
+    {
+      "id": "space-bunny-free",
+      "provider": "opencode-go",
+      "ctx": 1048576,
+      "reasoning": true,
+      "probe_ok": 1,
+      "probe_attempts": 1,
+      "alive": true,
+      "inputs": [
+        {
+          "input_id": "code-fix",
+          "kind": "fix-bug",
+          "ok": true,
+          "usable": true,
+          "why": "code-shape",
+          "latency_ms": 9653,
+          "chars": 332,
+          "error": null
+        },
+        {
+          "input_id": "code-gen",
+          "kind": "implement",
+          "ok": true,
+          "usable": true,
+          "why": "code-shape",
+          "latency_ms": 7448,
+          "chars": 219,
+          "error": null
+        },
+        {
+          "input_id": "agent-plan",
+          "kind": "agentic",
+          "ok": true,
+          "usable": true,
+          "why": "numbered-plan",
+          "latency_ms": 35644,
+          "chars": 5200,
           "error": null
         }
       ],

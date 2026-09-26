@@ -1,0 +1,180 @@
+{
+  "generated_at": "2026-09-26T08:09:16.855Z",
+  "pings": {
+    "opencode/ling-3.0-flash-fin-free": {
+      "status": "OK",
+      "latency_ms": 10195,
+      "error_snip": null
+    },
+    "opencode/qwen3.6-plus-free": {
+      "status": "ERROR",
+      "latency_ms": 3609,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_453b55a8\"\n  }\n}\n"
+    },
+    "opencode/mimo-v2-pro-free": {
+      "status": "ERROR",
+      "latency_ms": 2649,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_4139e901\"\n  }\n}\n"
+    },
+    "opencode/muse-spark-1.2-contributor-free": {
+      "status": "ERROR",
+      "latency_ms": 3687,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_f4c01767\"\n  }\n}\n"
+    },
+    "opencode/glm-5-free": {
+      "status": "ERROR",
+      "latency_ms": 2689,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_1cfd304f\"\n  }\n}\n"
+    },
+    "opencode/trinity-large-preview-free": {
+      "status": "ERROR",
+      "latency_ms": 2765,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_cff7f00a\"\n  }\n}\n"
+    },
+    "opencode/ling-3.0-tiny-free": {
+      "status": "ERROR",
+      "latency_ms": 3074,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_26599291\"\n  }\n}\n"
+    },
+    "opencode/kimi-k2.5-free": {
+      "status": "ERROR",
+      "latency_ms": 6925,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_16b44292\"\n  }\n}\n"
+    },
+    "opencode/glm-4.7-free": {
+      "status": "ERROR",
+      "latency_ms": 5246,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_b12d129f\"\n  }\n}\n"
+    },
+    "opencode/laguna-s-2.1-free": {
+      "status": "ERROR",
+      "latency_ms": 3353,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_291c2003\"\n  }\n}\n"
+    },
+    "opencode/minimax-m3-free": {
+      "status": "ERROR",
+      "latency_ms": 3107,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_6676721a\"\n  }\n}\n"
+    },
+    "opencode/minimax-m2.5-free": {
+      "status": "ERROR",
+      "latency_ms": 2688,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_fc885753\"\n  }\n}\n"
+    },
+    "opencode/ring-2.6-1t-free": {
+      "status": "ERROR",
+      "latency_ms": 2946,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_788be71d\"\n  }\n}\n"
+    },
+    "opencode/longcat-2.0-free": {
+      "status": "ERROR",
+      "latency_ms": 2910,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_24b7a7c1\"\n  }\n}\n"
+    },
+    "opencode/hy3-preview-free": {
+      "status": "ERROR",
+      "latency_ms": 2667,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_856c120d\"\n  }\n}\n"
+    },
+    "opencode/space-bunny-free": {
+      "status": "OK",
+      "latency_ms": 8969,
+      "error_snip": null
+    },
+    "opencode/nemotron-3-super-free": {
+      "status": "ERROR",
+      "latency_ms": 2774,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_62c8c9c6\"\n  }\n}\n"
+    },
+    "opencode/minimax-m2.1-free": {
+      "status": "ERROR",
+      "latency_ms": 2676,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_270a62b9\"\n  }\n}\n"
+    },
+    "opencode/mimo-v2.6-flash-free": {
+      "status": "OK",
+      "latency_ms": 9400,
+      "error_snip": null
+    },
+    "opencode/nemotron-3-ultra-free": {
+      "status": "OK",
+      "latency_ms": 7671,
+      "error_snip": null
+    },
+    "opencode/mimo-v2.5-free": {
+      "status": "ERROR",
+      "latency_ms": 2518,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_d2ef3f9e\"\n  }\n}\n"
+    },
+    "opencode/grok-code": {
+      "status": "ERROR",
+      "latency_ms": 2541,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_abef5e2c\"\n  }\n}\n"
+    },
+    "opencode/ling-2.6-flash-free": {
+      "status": "ERROR",
+      "latency_ms": 2506,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_06910987\"\n  }\n}\n"
+    },
+    "opencode/deepseek-v4-flash-free": {
+      "status": "ERROR",
+      "latency_ms": 2470,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_0ab95021\"\n  }\n}\n"
+    },
+    "opencode/hy3-free": {
+      "status": "ERROR",
+      "latency_ms": 2478,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_62632746\"\n  }\n}\n"
+    },
+    "opencode/nemotron-3.5-lightning-free": {
+      "status": "ERROR",
+      "latency_ms": 90044,
+      "error_snip": "\u001b[0m\n> build · nemotron-3.5-lightning-free\n\u001b[0m\n"
+    },
+    "opencode/mimo-v2-omni-free": {
+      "status": "ERROR",
+      "latency_ms": 2734,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_8fb8403d\"\n  }\n}\n"
+    },
+    "opencode/ling-3.0-flash-free": {
+      "status": "ERROR",
+      "latency_ms": 2818,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_7f06865c\"\n  }\n}\n"
+    },
+    "opencode/north-mini-code-free": {
+      "status": "ERROR",
+      "latency_ms": 2653,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_35074594\"\n  }\n}\n"
+    },
+    "opencode/big-pickle": {
+      "status": "OK",
+      "latency_ms": 7514,
+      "error_snip": null
+    },
+    "opencode/mimo-v2-flash-free": {
+      "status": "ERROR",
+      "latency_ms": 2466,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_55df2c2b\"\n  }\n}\n"
+    },
+    "opencode/x-preview-f-free": {
+      "status": "ERROR",
+      "latency_ms": 2519,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_e15e3be2\"\n  }\n}\n"
+    },
+    "opencode/muse-spark-1.3-contributor-free": {
+      "status": "OK",
+      "latency_ms": 6110,
+      "error_snip": null
+    },
+    "opencode-go/ox-alpha-free": {
+      "status": "ERROR",
+      "latency_ms": 2486,
+      "error_snip": "\u001b[91m\u001b[1mError: \u001b[0m{\n  \"name\": \"UnknownError\",\n  \"data\": {\n    \"message\": \"Unexpected server error. Check server logs for details.\",\n    \"ref\": \"err_a73f8bb3\"\n  }\n}\n"
+    },
+    "opencode-go/space-bunny-free": {
+      "status": "OK",
+      "latency_ms": 6246,
+      "error_snip": null
+    }
+  }
+}
