@@ -14,17 +14,19 @@ const PATTERNS = [
 ];
 
 const staged = process.argv.includes('--staged');
-const rev = staged ? ':0' : 'HEAD';
 let files = [];
 try {
-  files = execFileSync('git', ['ls-files'], { encoding: 'utf8' }).split('\n').filter(Boolean);
+  files = execFileSync('git', ['ls-files', ...(staged ? ['--cached'] : [])], { encoding: 'utf8' }).split('\n').filter(Boolean);
 } catch { process.exit(0); }
 
 let bad = 0;
 for (const f of files) {
-  let content;
-  try { content = execFileSync('git', ['show', `${rev}:${f}`], { encoding: 'utf8', maxBuffer: 1 << 26 }); }
-  catch { continue; } // not in the index (deleted/unstaged)
+  // Prefer the staged blob in --staged mode; otherwise HEAD; if neither exists, skip.
+  let content = null;
+  for (const rev of staged ? [':0', 'HEAD'] : ['HEAD', ':0']) {
+    try { content = execFileSync('git', ['show', `${rev}:${f}`], { encoding: 'utf8', maxBuffer: 1 << 26 }); break; } catch {}
+  }
+  if (content == null) continue;
   for (const [name, re] of PATTERNS) {
     const m = content.match(re);
     if (m) { bad++; console.error(`secret-scan: ${f} looks like it contains a ${name} (…${m[0].slice(-6)})`); }
