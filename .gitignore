@@ -4,3 +4,6 @@ research/tasks-raw.json
 *.dump
 .env
 .env.*
+actionlint
+*.patch
+attempt-*.json

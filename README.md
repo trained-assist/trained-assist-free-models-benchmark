@@ -1,5 +1,7 @@
 # trained-assist-free-models-benchmark
 
+**Tracking issue: [#2 — Benchmark: free models for real auto-fix](https://github.com/trained-assist/trained-assist-free-models-benchmark/issues/2)** (goal, checklist, open questions).
+
 Which **free** model can actually do the job? The job we care about is **auto-fix**:
 take a repository whose PR/CI is failing and fix the code until CI is green. That is what
 `trained-assist-agent/src/issue-fixer.js` does in production, and it is the primary
