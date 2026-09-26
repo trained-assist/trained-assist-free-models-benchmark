@@ -30,7 +30,7 @@ Availability changes minute-to-minute; gemma/qwen/super never worked at all.
 
 1. **A single strong free model is enough for the deterministic work** — B1/B5 hit 7/7, so the verifiable ceiling was reached without ensembles or loops.
 2. **The bottleneck is availability, not accuracy** — ~81% of raw free calls fail (429/403/empty-200); only a chained build (B4) or a cross-family ensemble (B2) reliably survives it.
-3. **The Hermes critique loop (B3) lost** — 6/7 vs 7/7, at ~12× tokens and ~6.7× latency; extra calls increase dead-ends more than they fix errors.
+3. **The Hermes critique loop (B3) lost** — 6/7 vs 7/7, at ~12× tokens and ~5.9× latency; extra calls increase dead-ends more than they fix errors.
 4. **Never gate a cheap-profile step on a free-model LLM judge** — it failed 4 of 5 builds, including cases where the candidate answer was actually correct.
 5. **Cheap profile is viable today** if roles map to: researcher/developer = single free model or B4 chain; reviewer/verifier = B2 ensemble + `programmatic`/`test` checks (no LLM judge); Claude stays out of scope.
 

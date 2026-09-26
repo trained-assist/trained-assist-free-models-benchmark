@@ -49,18 +49,20 @@ Deterministic pass rate is the primary table (n=7). Judge task shown apart.
 | B4 free→paid chain | **7/7 (1.00)** | 0/1 | 8 | 2,954 | 3 s | $0 |
 | B5 Space Bunny | **7/7 (1.00)** | 0/1 | 8 | 2,511 | 7 s | $0 |
 
-Paid fallback was **never reached** (`spend.json`: `total_usd: 0`, `paid_calls: 0`)
-— the free chain answered every task on the first model. Cap $2 unused.
+Paid fallback was **never reached** (`spend.json`: `"total_usd": 0`, empty
+`paid_calls` array) — the free chain answered every task on the first model.
+Cap $2 unused.
 
 ## 4. Did the Hermes critique loop (B3) beat the single model (B1)?
 
-**No.** B3 scored 6/7 vs B1's 7/7 on the verifiable set, at ~6.7× the latency
-and ~12× the tokens (28,368 vs 2,375). The one loss (t04-palindrome) is
-instructive: the loop made 4 calls; the solver chain returned an empty answer
-under the extra load, so the build ended with `error:"no answer produced"` and
-`output:""`. More calls = more independent draws from a flaky free pool = a
-higher chance the whole chain dead-ends. **A critique loop is not free**: it
-multiplies both token cost and failure exposure.
+**No.** B3 scored 6/7 vs B1's 7/7 on the verifiable set, at ~5.9× the latency
+(20,421 ms vs 3,464 ms) and ~12× the tokens (28,368 vs 2,375). The one loss
+(t04-palindrome) is instructive: the loop made 3 calls (the revise step never
+ran); the solver chain returned an empty answer under the extra load, so the
+build ended with `error:"no answer produced"` and `output:""`. More calls = more
+independent draws from a flaky free pool = a higher chance the whole chain
+dead-ends. **A critique loop is not free**: it multiplies both token cost and
+failure exposure.
 
 ## 5. Free-model availability is the real constraint (probe)
 
@@ -89,19 +91,22 @@ Consequences:
 - Most :free models are **not** a usable fleet. In the last snapshot only **7 of
   17** answered at all; **2 are permanently 403**, 2 Google models never left 429.
 - A distinct, under-reported failure mode: **HTTP 200 with empty content** (no
-  error, no text). `ling-fin`, `content-safety`, `nano-omni` did this on every
-  attempt; `nemotron-ultra` did it once. A naive single call silently yields "".
+  error, no text). `ling-fin`, `content-safety`, `nano-omni` returned empty on
+  3 of 6 probe attempts each (the other 3 were 429s); `nemotron-ultra` did it
+  once. A naive single call silently yields "".
 - Availability is **time-varying** — the same model is 3/3 in one snapshot and
   0/3 minutes later. Builds must be resilient to this, not tuned to one model.
 
 ## 6. "Space Bunny Free"
 
-Identified via `/api/v1/models`: **`stealth/space-bunny-alpha`** ("Space Bunny
-Alpha", 1,000,000 ctx, pricing 0). No public model card ("stealth" = an
-unlabelled model, likely a lab A/B test; treat data as potentially retained).
-It scored **7/7 deterministic**, 0 build errors, 8 calls / 2,511 tokens. The
-subjective-task judge call timed out, not the model. It is a viable single-model
-baseline, with the caveat that its routing/retention is opaque.
+Identified via the live `/api/v1/models` response: **`stealth/space-bunny-alpha`**
+("Space Bunny Alpha", 1,000,000 ctx, `pricing: {prompt: 0, completion: 0}`).
+No public model card ("stealth" = an unlabelled model, likely a lab A/B test;
+treat data as potentially retained). It scored **7/7 deterministic**, 0 build
+errors, 8 calls / 2,511 tokens / cost $0 (backed by `results.json`), all in the
+`B5` runs. The subjective-task judge call timed out, not the model. It is a
+viable single-model baseline, with the caveat that its routing/retention is
+opaque.
 
 ## 7. Honest: where ensembles help / where they don't
 
