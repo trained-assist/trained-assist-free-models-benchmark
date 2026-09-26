@@ -1,0 +1,4 @@
+#!/bin/sh
+# Refuse a commit whose tracked files look like they carry a credential.
+# Install once: git config core.hooksPath .githooks
+node scripts/secret-scan.mjs || { echo "pre-commit: secret-scan failed — commit blocked"; exit 1; }
