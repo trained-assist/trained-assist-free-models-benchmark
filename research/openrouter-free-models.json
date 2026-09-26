@@ -1,0 +1,138 @@
+[
+  {
+    "id": "inclusionai/ling-3.0-flash-sante:free",
+    "ctx": 262144,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  },
+  {
+    "id": "inclusionai/ling-3.0-flash-fin:free",
+    "ctx": 262144,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  },
+  {
+    "id": "qwen/qwen3.8-27b:free",
+    "ctx": 262144,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  },
+  {
+    "id": "dots-studio/dots-3-note-preview:free",
+    "ctx": 512000,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  },
+  {
+    "id": "liquid/lfm-2.5-2.6b:free",
+    "ctx": 65536,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  },
+  {
+    "id": "nvidia/nemotron-3.5-lightning:free",
+    "ctx": 1000000,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  },
+  {
+    "id": "thinkingmachines/inkling-small:free",
+    "ctx": 1048576,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  },
+  {
+    "id": "poolside/laguna-s-2.1:free",
+    "ctx": 262144,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  },
+  {
+    "id": "thinkingmachines/inkling:free",
+    "ctx": 1048576,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  },
+  {
+    "id": "poolside/laguna-xs-2.1:free",
+    "ctx": 262144,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  },
+  {
+    "id": "cohere/north-mini-code:free",
+    "ctx": 256000,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  },
+  {
+    "id": "nvidia/nemotron-3.5-content-safety:free",
+    "ctx": 128000,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  },
+  {
+    "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "ctx": 1000000,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  },
+  {
+    "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+    "ctx": 256000,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  },
+  {
+    "id": "google/gemma-4-26b-a4b-it:free",
+    "ctx": 262144,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  },
+  {
+    "id": "google/gemma-4-31b-it:free",
+    "ctx": 262144,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  },
+  {
+    "id": "nvidia/nemotron-3-super-120b-a12b:free",
+    "ctx": 262144,
+    "pricing": {
+      "prompt": "0",
+      "completion": "0"
+    }
+  }
+]
