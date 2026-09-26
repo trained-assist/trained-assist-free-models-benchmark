@@ -38,9 +38,15 @@ const prompt = [
 
 const attempts = [];
 for (let i = 1; i <= ATTEMPTS; i++) {
-  execSync(`opencode run --auto -m ${MODEL} ${JSON.stringify(prompt)}`, {
-    cwd: repo, stdio: ['ignore', 'pipe', 'pipe'], timeout: 45 * 60_000, maxBuffer: 1 << 26,
-  });
+  // Pass the prompt on STDIN, never inside a shell string — the prompt contains
+  // quotes and `||` which break /bin/sh and were the cause of the last CI failure.
+  try {
+    execSync(`opencode run --auto -m ${MODEL}`, {
+      cwd: repo, input: prompt, stdio: ['pipe', 'pipe', 'pipe'], timeout: 45 * 60_000, maxBuffer: 1 << 26,
+    });
+  } catch (e) {
+    writeFileSync(`${ws}/fix-error.log`, `${e.message}\n${(e.stdout || '')}\n${(e.stderr || '')}`);
+  }
   const r = run(`node "${ws}/scripts/ci-buckets.mjs" --phase attempt-${i} --out "${ws}/attempt-${i}.json"`);
   const res = existsSync(`${ws}/attempt-${i}.json`) ? JSON.parse(readFileSync(`${ws}/attempt-${i}.json`, 'utf8')) : { totalFailed: -1 };
   attempts.push({ attempt: i, totalFailed: res.totalFailed, vitestFailed: res.vitest?.failedCount, cjsFailed: res.cjs?.failedCount });
