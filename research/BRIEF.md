@@ -1,56 +1,65 @@
-# Research brief — cheap/free model ensembles for the trained-assist agent
+# Research brief — free/cheap model builds for trained-assist (opencode run)
 
-Owner delegated this ("доверься тебе"). Produce a **design + a runnable benchmark harness**
-that answers: *what can we build out of free/cheap OpenRouter models + Hermes, and how do
-we package it so per-step executor roles get real diversity without paying for Claude.*
+Goal: find what we can build from FREE OpenRouter models (+ Hermes) so per-step
+executor roles get real diversity without paying for Claude. Deliver a runnable
+benchmark harness + a design doc. Back every claim with results.json.
 
-## Context / assets already prepared
-- `research/tasks-raw.json` — 3 621 deduped real user prompts extracted from
-  `~/.claude/projects` (Claude session logs). Fields: `{src, text}`. Buckets: fix-bug 161,
-  implement 211, explain 151, review 126, research 16 (rest "other").
-- `research/openrouter-free-models.json` — the 17 `:free` models on this account with
-  context length (incl. `nvidia/nemotron-3-ultra-550b-a55b:free` ctx=1M).
-- OpenRouter key is in env (`OPENROUTER_API_KEY`); the account works (HTTP 200).
-- Existing reference implementation of a free→paid model chain with discovery:
-  `trained-assist-agent/scripts/pr-coherence-check.mjs`.
-- Hermes single-call JSON: `trained-assist-agent/src/hermes-run.js` (`hermesRun({task,context,outputSchema})`).
-- Space Bunny Free is another free provider worth evaluating (find out what it actually is).
+## Assets already on disk
+- `research/tasks-raw.json` — {files, count:3621, tasks:[{src,text}]}. Real user prompts
+  from Claude logs. Buckets: fix-bug 161, implement 211, explain 151, review 126, research 16.
+- `research/openrouter-free-models.json` — 17 :free models with ctx (incl.
+  `nvidia/nemotron-3-ultra-550b-a55b:free` ctx=1M).
+- `OPENROUTER_API_KEY` is in env; account works.
+- Reference for free→paid chain + discovery: `trained-assist-agent/scripts/pr-coherence-check.mjs`.
+- Hermes single-call JSON: `trained-assist-agent/src/hermes-run.js`.
 
-## What to design
-1. **Builds (3–5, pick after testing feasibility)** combining:
-   - single free model,
-   - free-model **ensemble / self-consistency** across *different families* (nemotron,
-     gemma, qwen, ling, poolside…) + Hermes as arbiter,
-   - **Hermes critique loop**: Hermes frames challenge-questions → a model produces →
-     Hermes critiques from another angle → model revises,
-   - free→cheap-paid fallback chain with autosuggest (`/api/v1/models`) on error/quota.
-2. **A scoring approach that is deterministic first**: pick a small set of tasks whose
-   correct answer we can verify by exact/structural checks (e.g. a bug whose fix is known,
-   an extraction with a known schema, code that must pass a given test). Use a **reference
-   answer** (from the logs / known-good PR) — measure correctness, not vibes. Fall back to
-   a cheap-LLM judge only where no reference exists; state clearly which tasks are which.
-3. **The Hermes angle**: evaluate Hermes' large context for the *research/critique* role —
-   does critique-loop actually raise correctness on the verifiable tasks vs a single call?
-4. **Packaging**: how this maps onto playbook per-step executor roles (`researcher`,
-   `developer`, `reviewer`, `verifier`) — concretely, what a step's `instructions`/config
-   would say so `runDueDurable` runs the ensemble/loop on a cheap profile (Claude out of
-   scope for now: one model tier everywhere).
+## DO THIS, IN ORDER (keep it small)
 
-## Budget
-- Prefer free models. Allow a **hard-capped** cheap-paid fallback (cap total spend ≤ $2).
-- Log every paid call (model, tokens, cost). Abort the run if the cap is hit.
+### Step 1 — pick a VERIFIABLE task subset (not all 3621)
+Select 6–10 tasks where the correct answer is checkable deterministically. Good sources:
+(a) prompts from tasks-raw.json that are self-contained code/extraction tasks; (b) known
+fixes from `trained-assist-agent` git history (bug → commit); (c) synthetic-but-realistic
+tasks with a fixed expected output (e.g. "extract these 5 fields from this text",
+"write a function that does X — must pass this test", "find the bug in this snippet whose
+fix is known"). Write them to `research/bench-tasks.json` as:
+`{id, prompt, reference, check: "exact"|"contains"|"test"|"schema", meta}`.
+State explicitly which are deterministic (reference exists) vs which will only get an LLM
+judge. Deterministic ones are the primary metric.
 
-## Deliverables (must exist on disk)
-1. `playbooks/` or `research/` **runnable harness** (node scripts) that: loads a task set,
-   runs each build, applies deterministic checks, writes `research/results.json` +
-   a markdown report `research/RESULTS.md`.
-2. `research/DESIGN.md` — the design: builds, scoring, when paid fallback, packaging into
-   playbook roles, and an honest "where ensembles help / where they don't" section.
-3. Commit both, open a PR against `main` in this repo (`trained-assist/trained-assist-engineering`
-   is a sibling, but this bench repo is standalone). If pushing isn't possible, write the
-   files and report the local paths.
+### Step 2 — build the harness `research/run-bench.mjs`
+Loads bench-tasks.json, runs each BUILD on each task, applies the check, writes
+`research/results.json` (per task × build: output, verdict, latency, tokens, cost).
+Builds to implement (start with 3, add if time):
+  B1 single free model (e.g. nvidia/nemotron-3-ultra-550b-a55b:free)
+  B2 free-model ENSEMBLE across DIFFERENT families (nemotron + gemma + qwen/ling) —
+     N independent answers, Hermes arbitrates disagreement.
+  B3 Hermes CRITIQUE LOOP: Hermes frames challenge-questions → a model answers/generates
+     → Hermes critiques from another angle → model revises.
+  B4 free→cheap-paid fallback chain with model discovery (only on error/quota).
+Checks: exact/contains/schema/test as declared. For non-deterministic tasks use a cheap
+LLM judge and TAG the verdict as `judge` (subjective), never mix with deterministic score.
+
+### Step 3 — cost guardrail
+Free first. Paid fallback hard-capped at $2 total. Log every paid call (model, tokens,
+cost) into results.json + a running `research/spend.json`. Abort if cap hit. Use
+`research/openrouter-free-models.json`; can also discover via `/api/v1/models`. Also
+evaluate "Space Bunny Free" if you can identify what it is — otherwise note it as unknown.
+
+### Step 4 — write `research/DESIGN.md`
+- the builds and what each measures;
+- deterministic-first scoring (why verifiable subset);
+- Hermes-large-context angle for research/critique — did B3 beat B1 on verifiable tasks?
+- honest section: **where ensembles help / where they don't** (sycophancy, same-family
+  correlated errors, cost of loops). Base it on results.json numbers.
+- packaging: how each build maps to playbook executor roles (researcher/developer/
+  reviewer/verifier) so runDueDurable runs it on a cheap profile. Claude OUT OF SCOPE —
+  one model tier everywhere.
+
+### Step 5 — report + commit
+`research/RESULTS.md` — human summary table + 5-line verdict. Commit all of research/.
+Do NOT modify trained-assist-agent src. Final message: file paths + the headline numbers.
 
 ## Rules
-- Do **not** modify `trained-assist-agent` src. This is research in this repo.
-- Every claim about model behaviour backed by `research/results.json`, not memory.
-- If a free model is unusable (errors/empty), record that as a result — it's signal.
+- Every model claim backed by a number in results.json. No claims from memory.
+- If a free model errors/produces empty — that IS a result, record it.
+- Keep the first working version SMALL and runnable; expand only if it already runs.
