@@ -24,6 +24,19 @@ run('npm i -g opencode-ai@latest || true');
 // target deps are needed for BOTH running tests and the model exploring the tree
 run('npm ci');
 
+// Write opencode's auth.json from secrets so the CLI can reach its providers in CI.
+// Format mirrors ~/.local/share/opencode/auth.json. Both keys are optional; only those
+// present are written. This is how we test whether opencode free-tier works on a runner.
+const HOME = process.env.HOME;
+const auth = {};
+if (process.env.OPENCODE_API_KEY) auth.opencode = { type: 'api', key: process.env.OPENCODE_API_KEY };
+if (process.env.OPENCODE_GO_KEY) auth['opencode-go'] = { type: 'api', key: process.env.OPENCODE_GO_KEY };
+if (Object.keys(auth).length) {
+  const dir = `${HOME}/.local/share/opencode`;
+  execSync(`mkdir -p ${dir} && chmod 700 ${dir}`);
+  writeFileSync(`${dir}/auth.json`, JSON.stringify(auth, null, 2), { mode: 0o600 });
+}
+
 const baseline = existsSync(`${ws}/baseline.json`) ? JSON.parse(readFileSync(`${ws}/baseline.json`, 'utf8')) : null;
 const failing = [
   ...(baseline?.vitest?.failed || []),

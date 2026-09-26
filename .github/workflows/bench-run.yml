@@ -78,6 +78,7 @@ jobs:
           MODEL: ${{ inputs.model }}
           ATTEMPTS: ${{ inputs.attempts }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
         run: node "$GITHUB_WORKSPACE/scripts/fix-and-rerun.mjs"
 
       - name: Upload result artifact
