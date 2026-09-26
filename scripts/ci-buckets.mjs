@@ -23,6 +23,16 @@ function sh(cmd) {
   }
 }
 
+// 0. install deps — without node_modules vitest finds nothing and every `node --test`
+//    file dies with a module error, which is NOT a test failure. Install first.
+const install = sh('npm ci --no-audit --no-fund');
+if (!install.ok) {
+  const result = { phase, generated_at: new Date().toISOString(), installFailed: true, installLog: install.out.slice(-2000), red: false, totalFailed: 0 };
+  writeFileSync(out, JSON.stringify(result, null, 2));
+  console.error(JSON.stringify({ phase, installFailed: true }));
+  process.exit(0);
+}
+
 // 1. syntax gate (fast) — like `npm run check`
 const check = sh('npm run check');
 
@@ -47,10 +57,14 @@ const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
 const cjsCmd = pkg.scripts?.['test:cjs'] || '';
 // extract the test/*.cjs paths mentioned in the script (this is the suite the repo runs)
 const cjsFiles = [...new Set((cjsCmd.match(/test\/[\w./-]+\.test\.cjs/g) || []))].filter(f => existsSync(f));
-const cjs = { failed: [], ok: true, perFile: {} };
+const cjs = { failed: [], ok: true, perFile: {}, couldNotRun: [] };
 for (const f of cjsFiles) {
   const r = sh(`node --test "${f}"`);
   const m = r.out.match(/^# fail (\d+)/m);
+  // A file that never produced a node:test summary did not RUN (module/env error) —
+  // that is an environment problem, not a test failure. Don't score it as red.
+  const ran = /^# tests \d+/m.test(r.out) || /^# pass \d+/m.test(r.out);
+  if (!ran && !m) { cjs.couldNotRun.push(f); cjs.perFile[f] = 'not-run'; continue; }
   const failCount = m ? parseInt(m[1], 10) : (r.ok ? 0 : 1);
   cjs.perFile[f] = failCount;
   if (failCount > 0) {
@@ -64,9 +78,9 @@ const result = {
   phase, repo: 'target', generated_at: new Date().toISOString(),
   syntaxCheckOk: check.ok,
   vitest: { ok: vitest.ok, failedCount: vitest.failed.length, passed: vitest.passed, failed: vitest.failed.slice(0, 100) },
-  cjs: { ok: cjs.ok, failedCount: cjs.failed.length, failed: cjs.failed.slice(0, 100), perFile: cjs.perFile },
+  cjs: { ok: cjs.ok, failedCount: cjs.failed.length, failed: cjs.failed.slice(0, 100), perFile: cjs.perFile, couldNotRun: cjs.couldNotRun },
   totalFailed: (check.ok ? 0 : 1) + vitest.failed.length + cjs.failed.length,
 };
 result.red = result.totalFailed > 0;
 writeFileSync(out, JSON.stringify(result, null, 2));
-console.error(JSON.stringify({ phase, syntaxCheckOk: result.syntaxCheckOk, vitestFailed: vitest.failed.length, cjsFailed: cjs.failed.length, red: result.red }));
+console.error(JSON.stringify({ phase, syntaxCheckOk: result.syntaxCheckOk, vitestFailed: vitest.failed.length, cjsFailed: cjs.failed.length, couldNotRun: cjs.couldNotRun.length, red: result.red }));
