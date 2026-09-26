@@ -52,31 +52,49 @@ Reads the opencode auth (`~/.local/share/opencode/auth.json`) automatically; nee
 
 ## The real-world benchmark (issue #1)
 
-`scripts/realworld.mjs` is the scaffold for the experiment that actually decides this:
+`scripts/realworld.mjs` is the older scaffold for cloning public failing PRs. The **primary**
+benchmark we run now is `scripts/autofix-bench.mjs` — a faithful copy of the production
+pipeline in `trained-assist-agent/src/issue-fixer.js` (clone → engine → verify, up to 3
+attempts), with the issue replaced by a case that has **known-failing tests**.
 
-1. **Corpus of failing PRs** (`data/corpus.json`) where the failure is **code-caused**,
-   not flaky/infra. A failing CI is not automatically a fixable task — a flaky test, a
-   missing secret, or someone else's broken dependency are not things a model should be
-   scored on. Collect ~30–50 such items; not 100 blind ones.
-   Shape: `[{ id, repo, baseSha, branch, cloneUrl, verifyCmd, taskPath }]`.
-2. **Isolated run**: clone at the failing state, run `opencode run -m <model>` in the
-   clone (same path as production `issue-fixer`).
-3. **Score with anti-cheat** — a green CI alone is not a win. Success requires ALL of:
-   - CI is green;
-   - the diff is non-empty;
-   - **no test files modified**;
-   - no obvious bypass (`|| true`, `.skip`, deleted asserts).
-4. **Clean up**: remove the workspace; delete the fork if one was created.
+### Corpus — from our own history, depth-scaled
 
-TODO in the skeleton (marked in code): populate the corpus, and optionally open a
-fork+PR on a subsample so **real GitHub CI** decides instead of a local `verifyCmd`.
+`scripts/find-cases.mjs` builds `data/cases.json` deterministically:
 
-### Local vs GitHub CI
+1. take a `fix(...)`/`feat(...)` commit from the agent repo that touched BOTH `src/` and
+   test files;
+2. in an **isolated worktree** (never touches `main`) stage the state *before* the fix
+   (`<sha>~1`) → this is the red state;
+3. run the tests that commit touched → count failures;
+4. bucket by depth and keep a **quota of 10**: `2` cases with ≥3 failing tests, `3` with
+   exactly 2, `5` with exactly 1;
+5. clean the worktree up.
 
-- **Local** (`npm ci && npm run check && npm test`) mirrors what `issue-fixer` runs in
-  production: fast, cheap, no forks. **Default.**
-- **GitHub fork + PR**: only for a subsample, when real CI semantics matter. Delete the
-  fork afterwards.
+Why our own history and not random public PRs: a random red PR is usually red for reasons
+a model should not be scored on (flaky test, missing secret, infra). Reverting a real fix
+gives a **guaranteed reproducible red state with a known failing test** — no ground-truth
+fix needed, the failing test IS the target.
+
+### Run
+
+```bash
+node scripts/find-cases.mjs                     # build data/cases.json (quota 2/3/5)
+node scripts/autofix-bench.mjs --model opencode/space-bunny-free
+```
+
+`autofix-bench.mjs` — simple launch, deep analytics:
+- per case: `for attempt 1..3 { model fixes → run the case's tests }`;
+- records **green/failing counts after each attempt** (depth / progress / first-pass) and
+  residual failure **kinds** (assertion / structural / timeout);
+- **anti-cheat**: test files must be untouched, diff non-empty, no `|| true` / `.skip` /
+  `eslint-disable` / `@ts-ignore`;
+- writes the final diff of every case to `results/diff-*.patch` for **expert review**
+  (a Claude pass over the diffs for gross code smells — bypasses, hardcoded test values,
+  disabled checks, dead code, goto-like control flow). It is a subjective layer, kept
+  separate from the deterministic metric.
+
+Success = tests green **and** cheat-free.
+
 
 ## The architect role (Hermes critique loop)
 

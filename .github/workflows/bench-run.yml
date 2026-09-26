@@ -1,0 +1,90 @@
+name: bench-run
+
+# Recreate a REAL CI run for any commit of a target repo, in GitHub's own runner
+# environment (node 22, playwright-ready), and record which tests fail.
+#
+# Why here and not in the product repo: we don't add benchmark entropy to
+# trained-assist-agent. This private bench repo checks out the (public) target repo
+# at a chosen commit and runs ITS test suite in a CI environment — so the red/green
+# is GitHub CI, not a noisy local macOS run (different paths, missing playwright, etc.).
+#
+# Usage (from scripts/run-ci.mjs or manually):
+#   gh workflow run bench-run.yml -R trained-assist/trained-assist-free-models-benchmark \
+#     -f target_repo=trained-assist/trained-assist-agent \
+#     -f ref=<sha> -f model=opencode/space-bunny-free -f attempts=3
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_repo:
+        description: 'Owner/name of the repo to test'
+        default: 'trained-assist/trained-assist-agent'
+        required: true
+      ref:
+        description: 'Commit SHA or branch of the target repo (the red/base state)'
+        required: true
+      model:
+        description: 'Free model for the fix step (provider/model), empty = baseline only'
+        default: ''
+      attempts:
+        description: 'Fix attempts (like issue-fixer)'
+        default: '3'
+      install:
+        description: 'Install target deps before testing buckets (slow; off by default)'
+        default: 'false'
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout bench repo
+        uses: actions/checkout@v4
+
+      - name: Checkout target repo @ ref
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ inputs.target_repo }}
+          ref: ${{ inputs.ref }}
+          path: target
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Node version
+        run: node --version
+
+      # Baseline: which tests fail in THIS CI environment, at the given ref.
+      # We run the suite in a bucket-list so a crash in one bucket doesn't hide the rest.
+      - name: Baseline test run (RED state)
+        id: baseline
+        continue-on-error: true
+        working-directory: target
+        run: node "$GITHUB_WORKSPACE/scripts/ci-buckets.mjs" --phase baseline --out "$GITHUB_WORKSPACE/baseline.json"
+
+      - name: Upload baseline artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline
+          path: baseline.json
+
+      # Optional fix step: let a free model (opencode) edit the tree, then re-run.
+      - name: Fix with free model
+        if: ${{ inputs.model != '' }}
+        working-directory: target
+        env:
+          MODEL: ${{ inputs.model }}
+          ATTEMPTS: ${{ inputs.attempts }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: node "$GITHUB_WORKSPACE/scripts/fix-and-rerun.mjs"
+
+      - name: Upload result artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: result
+          path: |
+            baseline.json
+            result.json

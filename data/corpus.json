@@ -1,0 +1,530 @@
+[
+  {
+    "id": "nodejs-undici-5907",
+    "repo": "nodejs/undici",
+    "pr": 5907,
+    "title": "reenable cachestorage wpts",
+    "headRef": "add-cachestorage-tests-to-matrix",
+    "headOwner": "KhafraDev",
+    "headSha": "33bb522dca9ec0a5010533a587519e61741a2396",
+    "files": 2,
+    "failedChecks": [
+      "Test with Node.js 22 compiled --without-intl"
+    ],
+    "cloneUrl": "https://github.com/KhafraDev/undici.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "nodejs-undici-5897",
+    "repo": "nodejs/undici",
+    "pr": 5897,
+    "title": "fix(http1): fixup strictContentLength handling",
+    "headRef": "jasnell/fixup-h1-strict-content-length",
+    "headOwner": "jasnell",
+    "headSha": "7a7918e871143390f8199ce1268f7a7b30755762",
+    "files": 2,
+    "failedChecks": [
+      "Test with Node.js 22 compiled --without-intl"
+    ],
+    "cloneUrl": "https://github.com/jasnell/undici.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "nodejs-undici-5885",
+    "repo": "nodejs/undici",
+    "pr": 5885,
+    "title": "fix(http2): enforce max concurrent streams",
+    "headRef": "jasnell/fixup-h2-max-concurrent-streams",
+    "headOwner": "jasnell",
+    "headSha": "3ab330caacc4415960f24183066e4dd7be06adef",
+    "files": 8,
+    "failedChecks": [
+      "Test with Node.js 22 compiled --without-intl"
+    ],
+    "cloneUrl": "https://github.com/jasnell/undici.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "nodejs-undici-5881",
+    "repo": "nodejs/undici",
+    "pr": 5881,
+    "title": "fix(pool): ensure that removed clients don't pick up requests",
+    "headRef": "jasnell/fixup-pool-removed-client",
+    "headOwner": "jasnell",
+    "headSha": "6a8657e1be7e89dbc3860c0d97c29d79b9be0ffb",
+    "files": 4,
+    "failedChecks": [
+      "Test with Node.js 22 compiled --without-intl"
+    ],
+    "cloneUrl": "https://github.com/jasnell/undici.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "nodejs-undici-5802",
+    "repo": "nodejs/undici",
+    "pr": 5802,
+    "title": "feat(h2): honor maxRequestsPerClient",
+    "headRef": "feat/max-requests-per-client-h2-5787",
+    "headOwner": "johnlyonms",
+    "headSha": "41ba964e7059eb0dc19bd9c56bcea8d102ed07e9",
+    "files": 5,
+    "failedChecks": [
+      "Test with Node.js 22 on macos-latest / Test with Node.js 22 on macos-latest"
+    ],
+    "cloneUrl": "https://github.com/johnlyonms/undici.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "nodejs-undici-5800",
+    "repo": "nodejs/undici",
+    "pr": 5800,
+    "title": "build(deps-dev): bump @metcoder95/https-pem from 1.0.0 to 1.0.1",
+    "headRef": "fix/flaky-pem-illegal-padding",
+    "headOwner": "ViniciusDev26",
+    "headSha": "583b30f209b3563479159b4e43393b90369845f4",
+    "files": 3,
+    "failedChecks": [
+      "Test with Node.js 22 compiled --without-intl"
+    ],
+    "cloneUrl": "https://github.com/ViniciusDev26/undici.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "expressjs-express-7474",
+    "repo": "expressjs/express",
+    "pr": 7474,
+    "title": "deps: proxy-addr@^2.0.8",
+    "headRef": "fix/issue-7473-proxy-addr",
+    "headOwner": "lazerg",
+    "headSha": "2e9749889c8e9b5411f29e4cbd33ed822ffdb87b",
+    "files": 1,
+    "failedChecks": [
+      "Lint",
+      "Node.js 24 - ubuntu-latest",
+      "Node.js 25 - ubuntu-latest",
+      "Node.js 26 - ubuntu-latest",
+      "Node.js 24 - windows-latest",
+      "Node.js 25 - windows-latest",
+      "Node.js 26 - windows-latest"
+    ],
+    "cloneUrl": "https://github.com/lazerg/express.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "expressjs-express-7338",
+    "repo": "expressjs/express",
+    "pr": 7338,
+    "title": "│ feat(res): add res.sse() for Server-Sent Events ",
+    "headRef": "master",
+    "headOwner": "danelmott",
+    "headSha": "614a168e4a6188b5f9576d4239c7c3a584e259cb",
+    "files": 5,
+    "failedChecks": [
+      "Node.js 16 - ubuntu-latest",
+      "Node.js 17 - ubuntu-latest",
+      "Node.js 16 - windows-latest",
+      "Node.js 17 - windows-latest"
+    ],
+    "cloneUrl": "https://github.com/danelmott/express.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "axios-axios-11248",
+    "repo": "axios/axios",
+    "pr": 11248,
+    "title": "fix(headers): honor function, string and RegExp rewrite matchers in set()",
+    "headRef": "fix/headers-set-rewrite-matcher",
+    "headOwner": "Prafyl",
+    "headSha": "51a27e3bc7f7cc6a800ff347258c8a911641e048",
+    "files": 3,
+    "failedChecks": [
+      "Greptile Review"
+    ],
+    "cloneUrl": "https://github.com/Prafyl/axios.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "axios-axios-11246",
+    "repo": "axios/axios",
+    "pr": 11246,
+    "title": "fix(http): reject negative timeouts instead of crashing the process",
+    "headRef": "fix/http-negative-timeout",
+    "headOwner": "koreahghg",
+    "headSha": "f3f15393e936a3b798c78e13b9c6e567c28d9602",
+    "files": 3,
+    "failedChecks": [
+      "Greptile Review"
+    ],
+    "cloneUrl": "https://github.com/koreahghg/axios.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "axios-axios-11227",
+    "repo": "axios/axios",
+    "pr": 11227,
+    "title": "fix: keep caller-supplied request data on the exposed response config",
+    "headRef": "fix-response-config-data-preserve",
+    "headOwner": "pratik-desgn",
+    "headSha": "d8cf5b6e0b10817d93832bdcb2dd8b8abe2fac79",
+    "files": 3,
+    "failedChecks": [
+      "Greptile Review"
+    ],
+    "cloneUrl": "https://github.com/pratik-desgn/axios.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "axios-axios-11197",
+    "repo": "axios/axios",
+    "pr": 11197,
+    "title": "add fetch request policy tests and update test runner script",
+    "headRef": "fix/fetch-request-policy-tests",
+    "headOwner": "jayagr0023",
+    "headSha": "c98cfc3e3e0b580780c23035157d59daa77f8536",
+    "files": 2,
+    "failedChecks": [
+      "Greptile Review"
+    ],
+    "cloneUrl": "https://github.com/jayagr0023/axios.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "axios-axios-11181",
+    "repo": "axios/axios",
+    "pr": 11181,
+    "title": "feat(retry): add adaptive request retry mechanism with exponential backoff and jitter",
+    "headRef": "feat/adaptive-retry-interceptor-with-backoff",
+    "headOwner": "vjymisal0",
+    "headSha": "82a1ce67dab0bd6fbf622b6562136f05d331929b",
+    "files": 8,
+    "failedChecks": [
+      "Greptile Review"
+    ],
+    "cloneUrl": "https://github.com/vjymisal0/axios.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "axios-axios-11148",
+    "repo": "axios/axios",
+    "pr": 11148,
+    "title": "fix(core): stop walking agents when serializing an AxiosError",
+    "headRef": "fix-tojson-agent-oom",
+    "headOwner": "Kjubikstronk",
+    "headSha": "7bef70082ba9fb7fdfcc2129044890a3646e1b55",
+    "files": 4,
+    "failedChecks": [
+      "Greptile Review"
+    ],
+    "cloneUrl": "https://github.com/Kjubikstronk/axios.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "sveltejs-kit-17186",
+    "repo": "sveltejs/kit",
+    "pr": 17186,
+    "title": "fix: send requests that rank text/html below another type to the endpoint",
+    "headRef": "fix/content-negotiation-accept-quality",
+    "headOwner": "SulimanAbdulrazzaq",
+    "headSha": "f110b735de19d546486d257032bf27d2b55241e7",
+    "files": 6,
+    "failedChecks": [
+      "lint-all"
+    ],
+    "cloneUrl": "https://github.com/SulimanAbdulrazzaq/kit.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "sveltejs-kit-16867",
+    "repo": "sveltejs/kit",
+    "pr": 16867,
+    "title": "feat: support report-sha256/report-sha384/report-sha512 CSP keywords",
+    "headRef": "feature/csp-report-sha",
+    "headOwner": "willfarrell",
+    "headSha": "7cc4a3194e814d97609c4297e09681ce3abfe3bf",
+    "files": 5,
+    "failedChecks": [
+      "test-kit (24, ubuntu-latest, chromium, beta)"
+    ],
+    "cloneUrl": "https://github.com/willfarrell/kit.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "prettier-prettier-20120",
+    "repo": "prettier/prettier",
+    "pr": 20120,
+    "title": "[MDX] keep whitespaces befor import/export",
+    "headRef": "mdx-work-14",
+    "headOwner": "seiyab",
+    "headSha": "b3678586e4cf894f7541e8839351607c232005e0",
+    "files": 3,
+    "failedChecks": [
+      "[Full Test]  Node.js 26 on Linux",
+      "Node.js 22 on Linux",
+      "Node.js 26 on MacOS",
+      "Node.js 22 on MacOS",
+      "Node.js 26 on Windows",
+      "Node.js 22 on Windows",
+      "[Full Test]  Node.js 26 on Linux",
+      "Node.js 14 on Linux",
+      "Node.js 26 on MacOS",
+      "Node.js 26 on Windows",
+      "Node.js 14 on Windows",
+      "Node.js 24 on Linux",
+      "Node.js 22 on Linux",
+      "Node.js 20 on Linux",
+      "Node.js 18 on Linux",
+      "Node.js 16 on Linux",
+      "Node.js 14 on MacOS",
+      "[Full Test]  Browser(chrome) on Linux",
+      "Browser(firefox) on Linux",
+      "Browser(firefox) on Windows"
+    ],
+    "cloneUrl": "https://github.com/seiyab/prettier.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "prettier-prettier-20108",
+    "repo": "prettier/prettier",
+    "pr": 20108,
+    "title": "Fix width of emoji ZWJ sequences with skin tone modifiers",
+    "headRef": "fix/issue-20105-emoji-grapheme-width",
+    "headOwner": "lazerg",
+    "headSha": "4c71ae2bc49fce29503bae3e5277169353b022fd",
+    "files": 5,
+    "failedChecks": [
+      "Node.js 18 on Linux"
+    ],
+    "cloneUrl": "https://github.com/lazerg/prettier.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "prettier-prettier-19998",
+    "repo": "prettier/prettier",
+    "pr": 19998,
+    "title": "Preserve trailing commas in CSS custom properties",
+    "headRef": "fix/css-custom-property-trailing-comma",
+    "headOwner": "vzer200",
+    "headSha": "a04998f172fcf9b38b8f3771ba47fdeaa967d935",
+    "files": 5,
+    "failedChecks": [
+      "Lint"
+    ],
+    "cloneUrl": "https://github.com/vzer200/prettier.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "prettier-prettier-19967",
+    "repo": "prettier/prettier",
+    "pr": 19967,
+    "title": "Keep parentheses when a comment would break a postfix update expression",
+    "headRef": "fix/update-expression-comment-parens",
+    "headOwner": "giaBaoJS",
+    "headSha": "7ddf5075bd97818273f2822bce84dc01c75fd634",
+    "files": 4,
+    "failedChecks": [
+      "Preview release"
+    ],
+    "cloneUrl": "https://github.com/giaBaoJS/prettier.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "vitest-dev-vitest-11359",
+    "repo": "vitest-dev/vitest",
+    "pr": 11359,
+    "title": "fix: match rerun triggers in hidden root paths (fix #10835)",
+    "headRef": "fix/force-rerun-triggers-dot-dirs",
+    "headOwner": "Marve10s",
+    "headSha": "b665ae9d38b28982fd4262c90398234f079c7ad1",
+    "files": 4,
+    "failedChecks": [
+      "Browsers: shard 2/2, node-24, ubuntu-latest"
+    ],
+    "cloneUrl": "https://github.com/Marve10s/vitest.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "vitest-dev-vitest-11350",
+    "repo": "vitest-dev/vitest",
+    "pr": 11350,
+    "title": "fix: make file shuffling deterministic",
+    "headRef": "fix/deterministic-file-shuffle",
+    "headOwner": "maricastroc",
+    "headSha": "f7f2525fd6adf43897295d151ad18b7ae23fe4bf",
+    "files": 2,
+    "failedChecks": [
+      "Test: e2e, node-24, macos-latest",
+      "Test: coverage, node-24, windows-latest",
+      "Browsers: shard 2/2, node-24, ubuntu-latest"
+    ],
+    "cloneUrl": "https://github.com/maricastroc/vitest.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "vitest-dev-vitest-11323",
+    "repo": "vitest-dev/vitest",
+    "pr": 11323,
+    "title": "fix(api): publish the api token atomically",
+    "headRef": "fix-api-token-race",
+    "headOwner": "umairnawaz333",
+    "headSha": "2e3896c466ca4ea147440f6d89c07d39b9588249",
+    "files": 2,
+    "failedChecks": [
+      "AgentScan Alert"
+    ],
+    "cloneUrl": "https://github.com/umairnawaz333/vitest.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "vitest-dev-vitest-11322",
+    "repo": "vitest-dev/vitest",
+    "pr": 11322,
+    "title": "fix(browser): support shadow root focus assertions (fix #11311)",
+    "headRef": "fix/11311-shadow-root-focus",
+    "headOwner": "jianyunyi",
+    "headSha": "ae3f9c238565cb80f65a8f763680303316f2a98f",
+    "files": 2,
+    "failedChecks": [
+      "Test: e2e, node-24, ubuntu-latest",
+      "Test: e2e, node-22, ubuntu-latest"
+    ],
+    "cloneUrl": "https://github.com/jianyunyi/vitest.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "vitest-dev-vitest-11321",
+    "repo": "vitest-dev/vitest",
+    "pr": 11321,
+    "title": "feat: support Temporal in fake timers",
+    "headRef": "feat/set-system-time-temporal",
+    "headOwner": "Prajwal2246",
+    "headSha": "b83379f3c9cc086e78780df9182d3ed13fdd43d3",
+    "files": 4,
+    "failedChecks": [
+      "Test: e2e, node-22, ubuntu-latest",
+      "Test: e2e, node-24, macos-latest"
+    ],
+    "cloneUrl": "https://github.com/Prajwal2246/vitest.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "vitest-dev-vitest-11313",
+    "repo": "vitest-dev/vitest",
+    "pr": 11313,
+    "title": "fix(spy): restore `get` and `set` spies on the same property independently",
+    "headRef": "fix/11306-accessor-spy-restore",
+    "headOwner": "ShantanuTaro",
+    "headSha": "e1fa8596da445cefcaa54253185ded936b1b4158",
+    "files": 2,
+    "failedChecks": [
+      "Lint: node-latest, ubuntu-latest"
+    ],
+    "cloneUrl": "https://github.com/ShantanuTaro/vitest.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "remix-run-react-router-15554",
+    "repo": "remix-run/react-router",
+    "pr": 15554,
+    "title": "fix(react-router-dev): accept readonly array in vite plugin dedupe helper",
+    "headRef": "fix/vite-plugin-dedupe-readonly-array",
+    "headOwner": "grzdev",
+    "headSha": "db87d85f6a0863f98362bbc65bbc5a5422442ecd",
+    "files": 1,
+    "failedChecks": [
+      "PR Checks"
+    ],
+    "cloneUrl": "https://github.com/grzdev/react-router.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "remix-run-react-router-15553",
+    "repo": "remix-run/react-router",
+    "pr": 15553,
+    "title": "fix(react-router): accept readonly arrays in SSR links dedupe helpers",
+    "headRef": "fix/ssr-links-readonly-array-types",
+    "headOwner": "grzdev",
+    "headSha": "2eeb4df471699463db6981a5a01e5152bf8a4f52",
+    "files": 1,
+    "failedChecks": [
+      "PR Checks"
+    ],
+    "cloneUrl": "https://github.com/grzdev/react-router.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "remix-run-react-router-15552",
+    "repo": "remix-run/react-router",
+    "pr": 15552,
+    "title": "fix(react-router): accept readonly arrays in router path and match utilities",
+    "headRef": "fix/router-utils-readonly-array-types",
+    "headOwner": "grzdev",
+    "headSha": "9a0dbe72ddca3749d4fe0d56122a3baab36fa0df",
+    "files": 1,
+    "failedChecks": [
+      "PR Checks"
+    ],
+    "cloneUrl": "https://github.com/grzdev/react-router.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "remix-run-react-router-15520",
+    "repo": "remix-run/react-router",
+    "pr": 15520,
+    "title": "fix(dev): declare an empty source map for route chunk placeholders when an export can't be split",
+    "headRef": "fix/route-chunk-placeholder-sourcemap",
+    "headOwner": "huuyafwww",
+    "headSha": "afc41e174ba793f77b5c8d40cae1ceacf006d24e",
+    "files": 3,
+    "failedChecks": [
+      "pre_activation"
+    ],
+    "cloneUrl": "https://github.com/huuyafwww/react-router.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  },
+  {
+    "id": "remix-run-react-router-15415",
+    "repo": "remix-run/react-router",
+    "pr": 15415,
+    "title": "fix(react-router): encode splat param values in generatePath",
+    "headRef": "fix-generatepath-splat-encoding",
+    "headOwner": "contactjawad",
+    "headSha": "b6e4ddcc87cdddea914a7118efb80763e04592e6",
+    "files": 2,
+    "failedChecks": [
+      "activation"
+    ],
+    "cloneUrl": "https://github.com/contactjawad/react-router.git",
+    "verifyCmd": "npm ci && npm test",
+    "taskPath": "."
+  }
+]
