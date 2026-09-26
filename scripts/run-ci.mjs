@@ -14,14 +14,22 @@ import { join } from 'path';
 
 const args = process.argv.slice(2);
 const opt = (n, d) => { const i = args.indexOf(`--${n}`); return i >= 0 && args[i + 1] ? args[i + 1] : d; };
-const REF = opt('ref', null);
+const REF_IN = opt('ref', null);
 const MODEL = opt('model', '');
 const REPO = opt('repo', 'trained-assist/trained-assist-free-models-benchmark');
 const TARGET = opt('target', 'trained-assist/trained-assist-agent');
 const ATTEMPTS = opt('attempts', '3');
-if (!REF) { console.error('need --ref <sha>'); process.exit(2); }
+if (!REF_IN) { console.error('need --ref <sha>'); process.exit(2); }
 
 const gh = (a, o = {}) => execFileSync('gh', a, { encoding: 'utf8', maxBuffer: 1 << 26, ...o });
+
+// actions/checkout only accepts a FULL 40-char SHA for a detached checkout; a short
+// SHA is interpreted as a branch name and the fetch fails. Resolve it first.
+let REF = REF_IN;
+if (/^[0-9a-f]{7,39}$/i.test(REF_IN)) {
+  REF = gh(['api', `repos/${TARGET}/commits/${REF_IN}`, '--jq', '.sha']).trim();
+  console.error(`resolved ${REF_IN} -> ${REF}`);
+}
 
 // 1. dispatch
 gh(['workflow', 'run', 'bench-run.yml', '-R', REPO,
@@ -56,4 +64,4 @@ function read(name) {
 }
 const baseline = read('baseline.json');
 const result = read('result.json');
-console.log(JSON.stringify({ runId, ref: REF, model: MODEL || null, baseline, result }, null, 2));
+console.error(JSON.stringify({ runId, ref: REF, model: MODEL || null, baseline, result }, null, 2));
