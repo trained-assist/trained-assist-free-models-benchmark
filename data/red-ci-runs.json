@@ -1,0 +1,842 @@
+[
+  {
+    "sha": "480aae980fcd6773dff3e36227cc76ac276d278a",
+    "branch": "feat/opencode-go-key-rotation",
+    "createdAt": "2026-09-26T00:39:15Z",
+    "runId": 36205633264,
+    "event": "pull_request"
+  },
+  {
+    "sha": "6f3026c918fb832eb5e240e3b6d29af97518585a",
+    "branch": "fix/opencode-deepseek-bad-request-retries-1790381927",
+    "createdAt": "2026-09-26T00:21:10Z",
+    "runId": 36204530594,
+    "event": "pull_request"
+  },
+  {
+    "sha": "f53d3ae2edbd8792903c9202ebb3fa414285444c",
+    "branch": "fix/opencode-deepseek-bad-request-retries-1790381927",
+    "createdAt": "2026-09-26T00:19:42Z",
+    "runId": 36204432639,
+    "event": "pull_request"
+  },
+  {
+    "sha": "2bd994bb7dfa96ef64d4122e741f9ca6cef585f5",
+    "branch": "feat/playbook-validators-fastpass",
+    "createdAt": "2026-09-25T23:37:43Z",
+    "runId": 36201750645,
+    "event": "pull_request"
+  },
+  {
+    "sha": "b87d1e00398b8cb4902f800625956c31cc0ab2ab",
+    "branch": "chore/checklist-1437",
+    "createdAt": "2026-09-25T23:30:01Z",
+    "runId": 36201250116,
+    "event": "pull_request"
+  },
+  {
+    "sha": "85e04cf852fab748188c5b3637a63c71f564459b",
+    "branch": "chore/checklist-1434-1790377936",
+    "createdAt": "2026-09-25T23:15:32Z",
+    "runId": 36200294189,
+    "event": "pull_request"
+  },
+  {
+    "sha": "e14d60963a6aadb93cd9a753cf708c811842dbfb",
+    "branch": "refactor/development-playbook-domain-optin-1790376941",
+    "createdAt": "2026-09-25T23:14:38Z",
+    "runId": 36200227668,
+    "event": "pull_request"
+  },
+  {
+    "sha": "4b25686bec4408415c93c2e66940246513f74ee2",
+    "branch": "feat/playbook-validators-llm",
+    "createdAt": "2026-09-25T23:02:35Z",
+    "runId": 36199399947,
+    "event": "pull_request"
+  },
+  {
+    "sha": "3097132ef75ca1af97329a107d73bb638af09d77",
+    "branch": "feat/playbook-validators-llm",
+    "createdAt": "2026-09-25T23:01:31Z",
+    "runId": 36199326735,
+    "event": "pull_request"
+  },
+  {
+    "sha": "fb250320cf15f4a0a89ba5b251f707a60b13d47a",
+    "branch": "feat/playbook-validators-llm",
+    "createdAt": "2026-09-25T22:59:43Z",
+    "runId": 36199193865,
+    "event": "pull_request"
+  },
+  {
+    "sha": "6590a709b768ee199c92bb9eb56cec5ce21896fb",
+    "branch": "feat/1418-engineering-skills-mount",
+    "createdAt": "2026-09-25T22:17:47Z",
+    "runId": 36195997594,
+    "event": "pull_request"
+  },
+  {
+    "sha": "c26ff3f06e4680dbc2ddfcb91acd72cddbbe12c6",
+    "branch": "docs/user-scenarios-playbooks-1790372185",
+    "createdAt": "2026-09-25T21:40:04Z",
+    "runId": 36192776118,
+    "event": "pull_request"
+  },
+  {
+    "sha": "9008187700c6f51da73b4e231d1c0134eda60a5b",
+    "branch": "main",
+    "createdAt": "2026-09-25T21:17:42Z",
+    "runId": 36190747516,
+    "event": "push"
+  },
+  {
+    "sha": "dcb0bb10a903504a26df9c4e2e4dec9d5d1123ea",
+    "branch": "feat/release-dir-deploy-1391",
+    "createdAt": "2026-09-25T21:14:54Z",
+    "runId": 36190480495,
+    "event": "pull_request"
+  },
+  {
+    "sha": "c21a742b5fe73a665f146b1fb37b7196c37fcb79",
+    "branch": "feat/playbook-executor-p3a-activation",
+    "createdAt": "2026-09-25T20:53:22Z",
+    "runId": 36188427071,
+    "event": "pull_request"
+  },
+  {
+    "sha": "1aede7fe64d0370e6eb7c075bb9dc2f1925f3928",
+    "branch": "fix/codex-mcp-run-identity",
+    "createdAt": "2026-09-25T18:51:23Z",
+    "runId": 36176061855,
+    "event": "pull_request"
+  },
+  {
+    "sha": "95d5c43533a224be6e796554c15560fec74b1f53",
+    "branch": "main",
+    "createdAt": "2026-09-25T18:12:11Z",
+    "runId": 36171912105,
+    "event": "push"
+  },
+  {
+    "sha": "6eb101c18c72c8c58e47a099af9dab9b41f199e1",
+    "branch": "fix/chat-history-recency",
+    "createdAt": "2026-09-25T18:09:25Z",
+    "runId": 36171619550,
+    "event": "pull_request"
+  },
+  {
+    "sha": "cf01d59976b1128f1c6b300b856e507c783b1381",
+    "branch": "main",
+    "createdAt": "2026-09-25T17:23:45Z",
+    "runId": 36166847439,
+    "event": "push"
+  },
+  {
+    "sha": "f3d8320166369fa60afed30b47320259c37f0215",
+    "branch": "fix/live-dir-deploy-hardening",
+    "createdAt": "2026-09-25T17:20:52Z",
+    "runId": 36166543795,
+    "event": "pull_request"
+  },
+  {
+    "sha": "69c04fa71688a5278855715cfef4bafba5238f41",
+    "branch": "fix/live-dir-deploy-hardening",
+    "createdAt": "2026-09-25T17:18:53Z",
+    "runId": 36166334707,
+    "event": "pull_request"
+  },
+  {
+    "sha": "7bee121267aeb67780c0b7ad3dd8a5b34f5d7ff0",
+    "branch": "fix/tolerant-token-format-v2",
+    "createdAt": "2026-09-25T14:41:58Z",
+    "runId": 36149224655,
+    "event": "pull_request"
+  },
+  {
+    "sha": "cf4bf2469c4eafc77f5e965611872f5a2865db9e",
+    "branch": "fix/gtd-schedule-hook",
+    "createdAt": "2026-09-25T14:14:52Z",
+    "runId": 36146192469,
+    "event": "pull_request"
+  },
+  {
+    "sha": "01350d0c22001c8a025a6ab2f9e0e9f80d0eaf66",
+    "branch": "main",
+    "createdAt": "2026-09-25T14:09:00Z",
+    "runId": 36145548980,
+    "event": "push"
+  },
+  {
+    "sha": "4c6d2d8e631211e222dd8d750a9e0f3ef7376f48",
+    "branch": "fix/web-e2e-honest-stop",
+    "createdAt": "2026-09-25T14:02:17Z",
+    "runId": 36144816566,
+    "event": "pull_request"
+  },
+  {
+    "sha": "466ab39aceb15dc006c7fb5f01d4971c74aa57b0",
+    "branch": "fix/web-stop-before-spawn",
+    "createdAt": "2026-09-25T13:58:36Z",
+    "runId": 36144410123,
+    "event": "pull_request"
+  },
+  {
+    "sha": "2917329140f5a9ad1bb3338a3715170a1726f264",
+    "branch": "feat/playbooks-p0-registry",
+    "createdAt": "2026-09-25T13:57:15Z",
+    "runId": 36144270636,
+    "event": "pull_request"
+  },
+  {
+    "sha": "60f9840a16b5546a80d78c184f822e68b16a251d",
+    "branch": "fix/web-run-no-telegram",
+    "createdAt": "2026-09-25T13:54:52Z",
+    "runId": 36144011029,
+    "event": "pull_request"
+  },
+  {
+    "sha": "8516c4917744119da8f9d819b449711f104ff78c",
+    "branch": "feat/1358-pr1-generation-runbinding",
+    "createdAt": "2026-09-25T12:38:05Z",
+    "runId": 36136053874,
+    "event": "pull_request"
+  },
+  {
+    "sha": "f08c95211275c8a2ecba3ecbec3ccd68c6ee3d28",
+    "branch": "refactor/media-shared-materializer",
+    "createdAt": "2026-09-25T10:37:13Z",
+    "runId": 36124960655,
+    "event": "pull_request"
+  },
+  {
+    "sha": "a2df4de23bc3784c90709de86da697820f3940e2",
+    "branch": "feat/chat-pinned-project",
+    "createdAt": "2026-09-24T14:21:55Z",
+    "runId": 36012260360,
+    "event": "pull_request"
+  },
+  {
+    "sha": "402efcfe7f3b586b0512e98a729a6db4125c2fa1",
+    "branch": "feat/1302-a1-third-bot-audience-isolation",
+    "createdAt": "2026-09-24T14:11:35Z",
+    "runId": 36010990666,
+    "event": "pull_request"
+  },
+  {
+    "sha": "ccf5df5d1b8689961348b5c22ebf474aa6a865c8",
+    "branch": "fix/zerocreds-preflight-detection",
+    "createdAt": "2026-09-24T13:24:32Z",
+    "runId": 36005452227,
+    "event": "pull_request"
+  },
+  {
+    "sha": "f9580c2029acef46487e1a58ee1ead014fd23cac",
+    "branch": "feat/web-bearer-idempotency",
+    "createdAt": "2026-09-24T13:16:55Z",
+    "runId": 36004581478,
+    "event": "pull_request"
+  },
+  {
+    "sha": "037720f91b79b2e5b7911b4cfbebfdd9f1addc04",
+    "branch": "fix/hh-response-final-polish",
+    "createdAt": "2026-09-24T13:06:18Z",
+    "runId": 36003396847,
+    "event": "pull_request"
+  },
+  {
+    "sha": "421ea02f09b6f7dcde97b629bd33f36bc10de0f5",
+    "branch": "feat/web-bearer-idempotency",
+    "createdAt": "2026-09-24T12:29:55Z",
+    "runId": 35999423837,
+    "event": "pull_request"
+  },
+  {
+    "sha": "27c1292a047941cd6a02ca2ff2baa6e840f64d25",
+    "branch": "feat/ru-edge-migration",
+    "createdAt": "2026-09-24T12:06:37Z",
+    "runId": 35997005740,
+    "event": "pull_request"
+  },
+  {
+    "sha": "94b0e57c4951a6393c6ffcab4b7af751073600a7",
+    "branch": "fix/recruiter-reply-route",
+    "createdAt": "2026-09-24T11:44:29Z",
+    "runId": 35994785545,
+    "event": "pull_request"
+  },
+  {
+    "sha": "d0fe13f1947d1c7d42677eea93d9d208bce7d6c0",
+    "branch": "fix/tg-edit-zombie-timer",
+    "createdAt": "2026-09-24T10:43:04Z",
+    "runId": 35988836436,
+    "event": "pull_request"
+  },
+  {
+    "sha": "73b40b8431ffd269f0196f86f91587c4780b171e",
+    "branch": "fix/retire-speculative-continuation",
+    "createdAt": "2026-09-24T10:39:15Z",
+    "runId": 35988470766,
+    "event": "pull_request"
+  },
+  {
+    "sha": "4f8b666a4417e2d2743b734890f75abe6c72a08f",
+    "branch": "fix/tg-edit-zombie-timer",
+    "createdAt": "2026-09-24T10:28:03Z",
+    "runId": 35987383585,
+    "event": "pull_request"
+  },
+  {
+    "sha": "ec50098d46bbf42e5b7fe0ecd1487a3c376d0789",
+    "branch": "fix/tg-edit-zombie-timer",
+    "createdAt": "2026-09-24T10:27:12Z",
+    "runId": 35987299689,
+    "event": "pull_request"
+  },
+  {
+    "sha": "ec50098d46bbf42e5b7fe0ecd1487a3c376d0789",
+    "branch": "fix/tg-edit-backoff",
+    "createdAt": "2026-09-24T10:25:42Z",
+    "runId": 35987153994,
+    "event": "pull_request"
+  },
+  {
+    "sha": "a461869ffd998956202de561129a621efeb6983c",
+    "branch": "fix/recruiter-upstream-chain",
+    "createdAt": "2026-09-24T09:39:16Z",
+    "runId": 35982538910,
+    "event": "pull_request"
+  },
+  {
+    "sha": "ae95c320a25f810be79ef9f9a23c0d7cd691ec08",
+    "branch": "fix/recruiter-upstream-chain",
+    "createdAt": "2026-09-24T09:38:38Z",
+    "runId": 35982475718,
+    "event": "pull_request"
+  },
+  {
+    "sha": "838ab5617e9a4d75903a29f4d6a7b7aafc399de6",
+    "branch": "fix/recruiter-upstream-chain",
+    "createdAt": "2026-09-24T09:35:24Z",
+    "runId": 35982151441,
+    "event": "pull_request"
+  },
+  {
+    "sha": "bad0506b8eedd9fdd4caa9dfbc6d4af5204a4679",
+    "branch": "fix/tg-edit-backoff",
+    "createdAt": "2026-09-24T09:19:00Z",
+    "runId": 35980480300,
+    "event": "pull_request"
+  },
+  {
+    "sha": "5c23b110c53c94cbdf7e4876823a592e61f25f93",
+    "branch": "fix/tg-edit-backoff",
+    "createdAt": "2026-09-24T09:18:34Z",
+    "runId": 35980438526,
+    "event": "pull_request"
+  },
+  {
+    "sha": "2e7233fa27c7f9ae1c736298314bfc7250e6813e",
+    "branch": "fix/tg-edit-backoff",
+    "createdAt": "2026-09-24T09:17:56Z",
+    "runId": 35980373031,
+    "event": "pull_request"
+  },
+  {
+    "sha": "901d448a9c8327e62cfe34203cab7e52cb2f712f",
+    "branch": "fix/cold-search-domain",
+    "createdAt": "2026-09-24T09:08:40Z",
+    "runId": 35979442745,
+    "event": "pull_request"
+  },
+  {
+    "sha": "eb81855aa8dd0cda80ece4ccee907006e1eec833",
+    "branch": "feat/mcp-sources-1271-registry",
+    "createdAt": "2026-09-24T08:55:00Z",
+    "runId": 35978056696,
+    "event": "pull_request"
+  },
+  {
+    "sha": "62860ed1ede2d50b074cc5c34cd3800d4c9f4ffb",
+    "branch": "docs/domain-modules-spec-v2",
+    "createdAt": "2026-09-24T07:06:05Z",
+    "runId": 35967803400,
+    "event": "pull_request"
+  },
+  {
+    "sha": "bad8d9e828bc2fa3544a4cf94cb6d7a211472359",
+    "branch": "feat/domain-web-bindings",
+    "createdAt": "2026-09-24T02:00:25Z",
+    "runId": 35945378661,
+    "event": "pull_request"
+  },
+  {
+    "sha": "c89b0c5f8175368f5bbc4db0d4a2e89866c91b92",
+    "branch": "fix/token-notify-dedupe-and-test-isolation",
+    "createdAt": "2026-09-24T01:25:07Z",
+    "runId": 35942825083,
+    "event": "pull_request"
+  },
+  {
+    "sha": "d0d7d8aab18bc4b5559477700feeba20d09d1b6a",
+    "branch": "fix/token-notify-dedupe-and-test-isolation",
+    "createdAt": "2026-09-24T01:23:40Z",
+    "runId": 35942718493,
+    "event": "pull_request"
+  },
+  {
+    "sha": "a3d013c2b4416bde4a3c102b5485edafe89490c2",
+    "branch": "feat/claude-native-resume",
+    "createdAt": "2026-09-24T01:00:42Z",
+    "runId": 35941011653,
+    "event": "pull_request"
+  },
+  {
+    "sha": "95ab48a938c2f47dce9bef77cca481af5facf234",
+    "branch": "main",
+    "createdAt": "2026-09-23T23:47:17Z",
+    "runId": 35935312870,
+    "event": "push"
+  },
+  {
+    "sha": "049e3cbc84e01cb2fd476bd593a33078877c41a9",
+    "branch": "fix/keep-chat-lock-drop-session-profile-locks",
+    "createdAt": "2026-09-23T23:46:53Z",
+    "runId": 35935280680,
+    "event": "pull_request"
+  },
+  {
+    "sha": "500e434b2d7d6c0fea6fb994173e0878a4bd02e3",
+    "branch": "fix/durable-restart-backoff",
+    "createdAt": "2026-09-23T23:45:24Z",
+    "runId": 35935159073,
+    "event": "pull_request"
+  },
+  {
+    "sha": "d4ae54416cde7024d04aea218e2eef4707a67afb",
+    "branch": "fix/event-edits-carry-buttons-v2",
+    "createdAt": "2026-09-23T23:25:29Z",
+    "runId": 35933526424,
+    "event": "pull_request"
+  },
+  {
+    "sha": "d7a9c779d9731cedb62f225581e77f952a499fb6",
+    "branch": "fix/event-edits-carry-buttons-v2",
+    "createdAt": "2026-09-23T23:20:41Z",
+    "runId": 35933116644,
+    "event": "pull_request"
+  },
+  {
+    "sha": "d2d22d623b5a71f2d67f8b82fc1f7e95d7609fbd",
+    "branch": "feat/durable-task-store-sqlite",
+    "createdAt": "2026-09-23T19:51:22Z",
+    "runId": 35912085988,
+    "event": "pull_request"
+  },
+  {
+    "sha": "dd84edeec3c636022d2da2cfef97696af589e308",
+    "branch": "feat/durable-task-store-vitest-tests",
+    "createdAt": "2026-09-23T18:35:45Z",
+    "runId": 35903560357,
+    "event": "pull_request"
+  },
+  {
+    "sha": "a239975d5412781417524c7c2cc2a6db17f16fcf",
+    "branch": "feat/durable-task-store-vitest-tests",
+    "createdAt": "2026-09-23T18:30:23Z",
+    "runId": 35902933369,
+    "event": "pull_request"
+  },
+  {
+    "sha": "34c11efe55379bd635717be9987c21c47336cfdb",
+    "branch": "feat/durable-task-store-sqlite",
+    "createdAt": "2026-09-23T18:24:54Z",
+    "runId": 35902290841,
+    "event": "pull_request"
+  },
+  {
+    "sha": "578241eccf03658a8e49b575c7154bf3309f7be8",
+    "branch": "fix/event-edits-carry-buttons",
+    "createdAt": "2026-09-23T18:22:09Z",
+    "runId": 35901968449,
+    "event": "pull_request"
+  },
+  {
+    "sha": "a387f5867e13d5fc4f798e9cd42dd725ea0d0828",
+    "branch": "fix/free-tier-ladder-rebase-1161",
+    "createdAt": "2026-09-23T09:41:01Z",
+    "runId": 35844375418,
+    "event": "pull_request"
+  },
+  {
+    "sha": "20b7b59cc3ddc4c6c562fb8577d084ddb6011c60",
+    "branch": "fix/free-tier-model-ladder-reliability",
+    "createdAt": "2026-09-23T09:06:19Z",
+    "runId": 35840964927,
+    "event": "pull_request"
+  },
+  {
+    "sha": "fd88877617d59d96a682b224935697a726872d54",
+    "branch": "prep/942-step11a-remove-mcp-tool-duplication",
+    "createdAt": "2026-09-22T16:28:40Z",
+    "runId": 35754364276,
+    "event": "pull_request"
+  },
+  {
+    "sha": "49ae3d7ceac230f61b5ec3b92dffaf98f670451c",
+    "branch": "fix/hh-403-error-message",
+    "createdAt": "2026-09-22T13:59:53Z",
+    "runId": 35737223895,
+    "event": "pull_request"
+  },
+  {
+    "sha": "6bae63a04d9f0b65646352d576519bd229a0fda3",
+    "branch": "feat/opencode-ladder-phase4-trace",
+    "createdAt": "2026-09-22T08:32:46Z",
+    "runId": 35705391363,
+    "event": "pull_request"
+  },
+  {
+    "sha": "a78a53ca7f1c83641885f190c834fce81576f47d",
+    "branch": "docs/hermes-phase15b-checklist-log",
+    "createdAt": "2026-09-22T08:09:21Z",
+    "runId": 35703273913,
+    "event": "pull_request"
+  },
+  {
+    "sha": "c615657d589c035d72f446acd07aead26f23b292",
+    "branch": "docs/hermes-phase3-scoping",
+    "createdAt": "2026-09-22T08:09:12Z",
+    "runId": 35703259824,
+    "event": "pull_request"
+  },
+  {
+    "sha": "8323c9d63e794e16a74ad376ebcce9ae84b484d0",
+    "branch": "feat/checklist-autologin-link",
+    "createdAt": "2026-09-22T01:41:08Z",
+    "runId": 35676678043,
+    "event": "pull_request"
+  },
+  {
+    "sha": "903286789638c4fa4d890352fda1171d9b59ab7d",
+    "branch": "fix/ci-feat-web-magic-link-and-profile-switcher-1790040971",
+    "createdAt": "2026-09-22T01:37:48Z",
+    "runId": 35676465129,
+    "event": "pull_request"
+  },
+  {
+    "sha": "c5a2d9840d2cee50801a53579d4cddf2da3972fd",
+    "branch": "feat/pre-queue-quick-answers",
+    "createdAt": "2026-09-21T23:57:06Z",
+    "runId": 35669846919,
+    "event": "pull_request"
+  },
+  {
+    "sha": "9390c34320f5bc06681b3dc309aeb1dcf85ac238",
+    "branch": "feat/checklist-app-gtd-merge",
+    "createdAt": "2026-09-21T23:39:47Z",
+    "runId": 35668578410,
+    "event": "pull_request"
+  },
+  {
+    "sha": "36aba9db0f055fdbca1f94d01258da29e49a0fa1",
+    "branch": "fix/remove-task-locks-clean",
+    "createdAt": "2026-09-21T23:17:27Z",
+    "runId": 35666869176,
+    "event": "pull_request"
+  },
+  {
+    "sha": "7789b583035b0b99b9579ba9b08b8167dab713ee",
+    "branch": "fix/resume-window-too-short",
+    "createdAt": "2026-09-21T22:53:20Z",
+    "runId": 35664940195,
+    "event": "pull_request"
+  },
+  {
+    "sha": "a1f0ce411c969bb5ac7f934a231476b6ebd09384",
+    "branch": "fix/remove-task-locks-clean",
+    "createdAt": "2026-09-21T22:48:52Z",
+    "runId": 35664578300,
+    "event": "pull_request"
+  },
+  {
+    "sha": "6b0b354e264ae1821aef8729c8afc17d63723fb2",
+    "branch": "fix/remove-chat-session-profile-locks",
+    "createdAt": "2026-09-21T22:48:28Z",
+    "runId": 35664546135,
+    "event": "pull_request"
+  },
+  {
+    "sha": "bbf4f250bc2415432ee6780ae872a48ff592f1f3",
+    "branch": "fix/deploy-gate-require-real-merge",
+    "createdAt": "2026-09-21T22:40:13Z",
+    "runId": 35663858169,
+    "event": "pull_request"
+  },
+  {
+    "sha": "5cc5d719e977a2e2b387b6eb9e9e9dd9c38238c6",
+    "branch": "fix/ci-feat-candidate-client-report-requirement-1790027025",
+    "createdAt": "2026-09-21T22:16:06Z",
+    "runId": 35661770602,
+    "event": "pull_request"
+  },
+  {
+    "sha": "7d996a9d56824c7884a930a9db953027b9277869",
+    "branch": "fix/ci-feat-candidate-client-report-requirement-1790027025",
+    "createdAt": "2026-09-21T22:11:11Z",
+    "runId": 35661338705,
+    "event": "pull_request"
+  },
+  {
+    "sha": "0e9eb583fe6a329ab67dfea5ca275179e4d98d28",
+    "branch": "fix/ci-feat-candidate-client-report-requirement-1790027025",
+    "createdAt": "2026-09-21T21:43:52Z",
+    "runId": 35658851266,
+    "event": "pull_request"
+  },
+  {
+    "sha": "7b2d839f2943bdd09e614482ada096150ef4de66",
+    "branch": "feat/connect-handler",
+    "createdAt": "2026-09-21T18:09:45Z",
+    "runId": 35636601590,
+    "event": "pull_request"
+  },
+  {
+    "sha": "4171252bfc979b42aa761c1321ffccde08eca98e",
+    "branch": "docs/hermes-phase3-scoping",
+    "createdAt": "2026-09-21T18:05:50Z",
+    "runId": 35636187792,
+    "event": "pull_request"
+  },
+  {
+    "sha": "4050a95ad049db739bfc0f8a514e9062af5c4d53",
+    "branch": "feature/opencode-image-ocr",
+    "createdAt": "2026-09-21T14:37:07Z",
+    "runId": 35613364866,
+    "event": "pull_request"
+  },
+  {
+    "sha": "7aba1c79b4650476c698144d709d653172aeff04",
+    "branch": "refactor/task-queue-extraction",
+    "createdAt": "2026-09-21T13:04:44Z",
+    "runId": 35603305183,
+    "event": "pull_request"
+  },
+  {
+    "sha": "8f0b1460eb4b5267ce7181e53b4529eb82fd04e1",
+    "branch": "fix/gdrive-docs-guard",
+    "createdAt": "2026-09-21T11:42:11Z",
+    "runId": 35595468122,
+    "event": "pull_request"
+  },
+  {
+    "sha": "7e2ed72107c3229832ebc4f091b56a8334d713d1",
+    "branch": "fix/maintenance-durable-ingress-on-main",
+    "createdAt": "2026-09-21T11:11:19Z",
+    "runId": 35592724339,
+    "event": "pull_request"
+  },
+  {
+    "sha": "94029035dc5ff9f159981e89c047c093bfb95f70",
+    "branch": "feat/candidate-client-report-requirements-log",
+    "createdAt": "2026-09-21T10:20:43Z",
+    "runId": 35588239390,
+    "event": "pull_request"
+  },
+  {
+    "sha": "19bdcd110054e8c6b6d84201955a260a08650a8e",
+    "branch": "fix/gtd-restart-interrupted-resume-v2",
+    "createdAt": "2026-09-21T09:50:59Z",
+    "runId": 35585546624,
+    "event": "pull_request"
+  },
+  {
+    "sha": "3705efe05ae17417317b7211b91b6bbf853bcfe7",
+    "branch": "fix/gtd-restart-interrupted-resume",
+    "createdAt": "2026-09-21T09:41:04Z",
+    "runId": 35584655597,
+    "event": "pull_request"
+  },
+  {
+    "sha": "6c1b860a08ed4d050e15cf08d558a0aebb6e2b89",
+    "branch": "feat/web-magic-link-and-profile-switcher",
+    "createdAt": "2026-09-21T08:41:45Z",
+    "runId": 35579240341,
+    "event": "pull_request"
+  },
+  {
+    "sha": "1721bab2a7dd74e14eba46a0b2cf3ae513ac2cb3",
+    "branch": "fix/gtd-per-session-reentry",
+    "createdAt": "2026-09-21T02:12:04Z",
+    "runId": 35553381693,
+    "event": "pull_request"
+  },
+  {
+    "sha": "7c2b656bbf301acb20155cb5e3a728f27051c0b7",
+    "branch": "fix/gtd-per-session-reentry",
+    "createdAt": "2026-09-21T02:11:06Z",
+    "runId": 35553320827,
+    "event": "pull_request"
+  },
+  {
+    "sha": "cbf42f32f847c660174f8ecf1711778c4b2021ec",
+    "branch": "fix/bullshit-guard-dead-model",
+    "createdAt": "2026-09-21T02:09:50Z",
+    "runId": 35553240950,
+    "event": "pull_request"
+  },
+  {
+    "sha": "ea05943ccc7ab8be370f1e92c75a121b1492c073",
+    "branch": "fix/gtd-per-session-reentry",
+    "createdAt": "2026-09-21T01:56:10Z",
+    "runId": 35552492714,
+    "event": "pull_request"
+  },
+  {
+    "sha": "6b68e6a738a1ff4cd8670b046f54adafb224c08f",
+    "branch": "fix/gtd-stale-pending-blocks-v2",
+    "createdAt": "2026-09-21T01:41:53Z",
+    "runId": 35551735583,
+    "event": "pull_request"
+  },
+  {
+    "sha": "4bc34756890dd3f2f837d31b172b6ab6a08ddaf6",
+    "branch": "fix/hh-proactive-string-config",
+    "createdAt": "2026-09-21T01:38:14Z",
+    "runId": 35551539964,
+    "event": "pull_request"
+  },
+  {
+    "sha": "655618c31fc42f2e8fad9aa89cc931d6013f5551",
+    "branch": "fix/hh-proactive-string-config",
+    "createdAt": "2026-09-21T01:17:18Z",
+    "runId": 35550415307,
+    "event": "pull_request"
+  },
+  {
+    "sha": "3cb0a0f3c0627f6b2f0bb01aa75b32a1d008bce0",
+    "branch": "fix/ci-update-branch-on-merge-fail",
+    "createdAt": "2026-09-21T00:58:28Z",
+    "runId": 35549372291,
+    "event": "pull_request"
+  },
+  {
+    "sha": "f9cd2d358b8f3a09eac31ec30eda9737a24af9c0",
+    "branch": "main",
+    "createdAt": "2026-09-21T00:52:11Z",
+    "runId": 35549041082,
+    "event": "push"
+  },
+  {
+    "sha": "2a90fef51e76af99a5dc7e49c6560883af417572",
+    "branch": "fix/ci-refactor-extract-intent-engine-1789951873",
+    "createdAt": "2026-09-21T00:51:19Z",
+    "runId": 35548999131,
+    "event": "pull_request"
+  },
+  {
+    "sha": "2638a66def578effe912104d33f9c9fad6662b15",
+    "branch": "refactor/remove-restart-maintenance",
+    "createdAt": "2026-09-21T00:49:37Z",
+    "runId": 35548912204,
+    "event": "pull_request"
+  },
+  {
+    "sha": "f8d349ea20e2054f801ae6b4b18de6988202f31a",
+    "branch": "fix/ci-feat-candidate-compare-tool-1789947975",
+    "createdAt": "2026-09-21T00:49:34Z",
+    "runId": 35548910354,
+    "event": "pull_request"
+  },
+  {
+    "sha": "61ab0ea189ba283d58805cb1a11ecdd3dd148287",
+    "branch": "refactor/cleanup-dead-deploy-state-code",
+    "createdAt": "2026-09-21T00:49:25Z",
+    "runId": 35548902333,
+    "event": "pull_request"
+  },
+  {
+    "sha": "4d3bd0d7d0fc7ed525d2015b6bbd9d403356a305",
+    "branch": "feat/codex-mini-context",
+    "createdAt": "2026-09-21T00:49:22Z",
+    "runId": 35548900117,
+    "event": "pull_request"
+  },
+  {
+    "sha": "1529dff021d77dd3f319676917cafb3e6fea6c5a",
+    "branch": "refactor/extract-intent-engine",
+    "createdAt": "2026-09-21T00:49:15Z",
+    "runId": 35548892934,
+    "event": "pull_request"
+  },
+  {
+    "sha": "ad4b5ea5d1761bc5ce0dcc97bcafeb61dbba78bd",
+    "branch": "main",
+    "createdAt": "2026-09-21T00:25:14Z",
+    "runId": 35547642823,
+    "event": "push"
+  },
+  {
+    "sha": "a638b88cb9de57a292e2e05090eca4167ec1e6df",
+    "branch": "fix/ci-fix-hh-disconnect-intent-test-1789950249",
+    "createdAt": "2026-09-21T00:24:15Z",
+    "runId": 35547589373,
+    "event": "pull_request"
+  },
+  {
+    "sha": "1759042bbeb23d63f8adfd257b046b68ce9807f4",
+    "branch": "fix/hh-disconnect-intent-test",
+    "createdAt": "2026-09-21T00:22:19Z",
+    "runId": 35547487057,
+    "event": "pull_request"
+  },
+  {
+    "sha": "74f0437910c633c97a8c6d6fdaa75437563f4a7c",
+    "branch": "main",
+    "createdAt": "2026-09-21T00:21:39Z",
+    "runId": 35547454024,
+    "event": "push"
+  },
+  {
+    "sha": "cf08b4bcbe00b0be3ca5e09a1796395b8d5c63f1",
+    "branch": "fix/ci-refactor-unify-hh-api-client-1789948417",
+    "createdAt": "2026-09-21T00:20:45Z",
+    "runId": 35547408223,
+    "event": "pull_request"
+  },
+  {
+    "sha": "e55781067be5f79fe6c7652c900ec39b3ccdcd2b",
+    "branch": "fix/ci-feat-candidate-compare-tool-1789947975",
+    "createdAt": "2026-09-21T00:20:42Z",
+    "runId": 35547406269,
+    "event": "pull_request"
+  },
+  {
+    "sha": "1759042bbeb23d63f8adfd257b046b68ce9807f4",
+    "branch": "fix/hh-disconnect-intent-test",
+    "createdAt": "2026-09-21T00:19:20Z",
+    "runId": 35547333514,
+    "event": "pull_request"
+  },
+  {
+    "sha": "0e6f30483c21a8901e46d48e3837f40d8bd3f7df",
+    "branch": "refactor/extract-intent-engine",
+    "createdAt": "2026-09-21T00:07:08Z",
+    "runId": 35546631767,
+    "event": "pull_request"
+  },
+  {
+    "sha": "140468b45be4328da27568603280ac838503577d",
+    "branch": "refactor/extract-hh-schedulers-from-server",
+    "createdAt": "2026-09-20T23:59:54Z",
+    "runId": 35546239676,
+    "event": "pull_request"
+  },
+  {
+    "sha": "da893177204bdf5c6ff343b32f5a17a483993f21",
+    "branch": "feat/codex-mini-context",
+    "createdAt": "2026-09-20T23:56:44Z",
+    "runId": 35546103102,
+    "event": "pull_request"
+  }
+]
