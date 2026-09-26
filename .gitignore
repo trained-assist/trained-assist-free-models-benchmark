@@ -1,0 +1,6 @@
+# Raw log/session dumps — may contain secrets and internal infra. Never commit.
+research/tasks-raw.json
+*-raw.json
+*.dump
+.env
+.env.*
