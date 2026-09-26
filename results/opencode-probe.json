@@ -1,0 +1,57 @@
+{
+  "source": "opencode-zen+go",
+  "generated_at": "2026-09-26T07:56:38.236Z",
+  "totals": {
+    "total": 1,
+    "alive": 1,
+    "alive_pct": 100,
+    "survived_all_3": 1,
+    "survived_pct_of_total": 100,
+    "survived_pct_of_alive": 100
+  },
+  "models": [
+    {
+      "id": "big-pickle",
+      "provider": "opencode",
+      "ctx": 200000,
+      "reasoning": true,
+      "probe_ok": 1,
+      "probe_attempts": 1,
+      "alive": true,
+      "inputs": [
+        {
+          "input_id": "code-fix",
+          "kind": "fix-bug",
+          "ok": true,
+          "usable": true,
+          "why": "code-shape",
+          "latency_ms": 8904,
+          "chars": 275,
+          "error": null
+        },
+        {
+          "input_id": "code-gen",
+          "kind": "implement",
+          "ok": true,
+          "usable": true,
+          "why": "code-shape",
+          "latency_ms": 8331,
+          "chars": 227,
+          "error": null
+        },
+        {
+          "input_id": "agent-plan",
+          "kind": "agentic",
+          "ok": true,
+          "usable": true,
+          "why": "numbered-plan",
+          "latency_ms": 27797,
+          "chars": 3042,
+          "error": null
+        }
+      ],
+      "usable_count": 3,
+      "survived_all": true
+    }
+  ]
+}

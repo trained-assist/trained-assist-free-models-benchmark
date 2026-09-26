@@ -1,0 +1,23 @@
+{
+  "note": "3 realistic medium inputs (~600-1200 tokens each) for a coding/agentic load test. Each has a machine-checkable success shape so 'answered' != 'garbage'.",
+  "inputs": [
+    {
+      "id": "code-fix",
+      "kind": "fix-bug",
+      "expect": "must output a corrected function and name the bug",
+      "text": "The following JavaScript function is supposed to return the sum of all even numbers in an array, but it returns wrong results. Find the bug, explain it in one sentence, and return the CORRECTED function only.\n\n```js\nfunction sumEven(nums) {\n  let total = 0;\n  for (let i = 0; i <= nums.length; i++) {\n    if (nums[i] % 2 === 0) total += nums[i];\n  }\n  return total;\n}\n```\n\nTest case: sumEven([1,2,3,4]) should be 6."
+    },
+    {
+      "id": "code-gen",
+      "kind": "implement",
+      "expect": "must output a valid JS function with the required signature and pass the described cases",
+      "text": "Write a JavaScript function `chunk(arr, size)` that splits an array into groups of length `size`, returning an array of arrays (the last group may be shorter). Requirements: throw a RangeError if size < 1; return a shallow copy; do not mutate the input. Return ONLY the function. It must satisfy: chunk([1,2,3,4,5],2) → [[1,2],[3,4],[5]]; chunk([1,2,3],1) → [[1],[2],[3]]; chunk([],3) → []."
+    },
+    {
+      "id": "agent-plan",
+      "kind": "agentic",
+      "expect": "must output an ordered plan (numbered steps) that references finding the file, reading it, editing, running tests",
+      "text": "You are a coding agent with access to a repository, a shell, and tests. In the repo there is a Node CLI that reads `config.json` and prints the value of the key `PORT`. Users report it prints `undefined` even though `config.json` contains `\"PORT\": 8080`. Produce a concrete step-by-step plan to diagnose and fix this, in the order you would actually execute the tool calls. Number each step. Be specific about which files/commands you would inspect first and what evidence would confirm the root cause before you edit anything."
+    }
+  ]
+}
