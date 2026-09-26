@@ -1,0 +1,81 @@
+{
+  "scoring": {
+    "primary": "deterministic",
+    "deterministic_checks": ["exact", "contains", "schema", "test"],
+    "judge_checks": ["judge"],
+    "note": "Deterministic tasks (t01–t07) have a fixed reference answer and are the primary metric. Task t08 (check=judge) has no fixed reference — it is scored by a cheap LLM judge and its verdict is always tagged `judge`, never mixed into the deterministic score."
+  },
+  "tasks": [
+    {
+      "id": "t01-arith",
+      "check": "exact",
+      "normalize": "number",
+      "prompt": "Compute (47 * 89) + 123. Reply with only the integer, no explanation.",
+      "reference": "4306",
+      "meta": { "deterministic": true, "family": "arithmetic", "source": "synthetic" }
+    },
+    {
+      "id": "t02-json-extract",
+      "check": "schema",
+      "prompt": "Extract structured data from this text into a JSON object with EXACTLY these five keys: name, email, company, role, city. Reply with ONLY the JSON object, no markdown fence:\n\n\"Maria Petrova (maria.petrova@example.com) is CTO at Acme Robotics, based in Kazan.\"",
+      "reference": {
+        "type": "object",
+        "required": ["name", "email", "company", "role", "city"],
+        "expect": {
+          "name": "Maria Petrova",
+          "email": "maria.petrova@example.com",
+          "company": "Acme Robotics",
+          "role": "CTO",
+          "city": "Kazan"
+        }
+      },
+      "meta": { "deterministic": true, "family": "extraction", "source": "synthetic" }
+    },
+    {
+      "id": "t03-fields-contains",
+      "check": "contains",
+      "prompt": "List every named entity from the text below verbatim (company, person, email, phone, city). One per line, no extra commentary.\n\n\"Ivan Kuznetsov, ivan.kuznetsov@nordwind.ru, +7 903 210-44-55, is Head of Sales at Nordwind Logistics in Saint Petersburg.\"",
+      "reference": ["Nordwind Logistics", "Ivan Kuznetsov", "ivan.kuznetsov@nordwind.ru", "+7 903 210-44-55", "Saint Petersburg"],
+      "meta": { "deterministic": true, "family": "extraction", "source": "synthetic" }
+    },
+    {
+      "id": "t04-palindrome-test",
+      "check": "test",
+      "prompt": "Write a JavaScript function named `isPalindrome(s)` that returns true when `s` reads the same forwards and backwards, ignoring case and non-alphanumeric characters. Reply with the function only.",
+      "reference": "isPalindrome passes 4/4 hidden test cases",
+      "harness": "const cases = [[\"A man, a plan, a canal: Panama\", true], [\"race a car\", false], [\"\", true], [\"0P\", false]];\nlet pass = 0;\nfor (const [s, e] of cases) { try { if (typeof isPalindrome === 'function' && isPalindrome(s) === e) pass++; } catch (_) {} }\npass === cases.length;",
+      "meta": { "deterministic": true, "family": "codegen", "source": "synthetic" }
+    },
+    {
+      "id": "t05-fizzbuzz-test",
+      "check": "test",
+      "prompt": "Write a JavaScript function named `fizzbuzz(n)` that returns an array of length n where multiples of 3 are \"Fizz\", multiples of 5 are \"Buzz\", multiples of both are \"FizzBuzz\", and other positions hold the number itself (1-indexed). Reply with the function only.",
+      "reference": "fizzbuzz(15) equals known array",
+      "harness": "const exp = [1,2,\"Fizz\",4,\"Buzz\",\"Fizz\",7,8,\"Fizz\",\"Buzz\",11,\"Fizz\",13,14,\"FizzBuzz\"];\nlet ok = false;\ntry { ok = typeof fizzbuzz === 'function' && JSON.stringify(fizzbuzz(15)) === JSON.stringify(exp); } catch (_) {}\nok;",
+      "meta": { "deterministic": true, "family": "codegen", "source": "synthetic" }
+    },
+    {
+      "id": "t06-python-output",
+      "check": "exact",
+      "normalize": "number",
+      "prompt": "What does this Python program print? Reply with only the printed value.\n\n```python\nx = [i * i for i in range(5)]\nprint(sum(x))\n```",
+      "reference": "30",
+      "meta": { "deterministic": true, "family": "code-trace", "source": "synthetic" }
+    },
+    {
+      "id": "t07-find-bug-line",
+      "check": "exact",
+      "normalize": "number",
+      "prompt": "A function is supposed to sum all elements of an array but throws / returns NaN. Which ONE line number contains the bug? Reply with only the line number.\n\n```js\n1: function total(items) {\n2:   let sum = 0;\n3:   for (let i = 0; i <= items.length; i++) {\n4:     sum += items[i];\n5:   }\n6:   return sum;\n7: }\n```",
+      "reference": "3",
+      "meta": { "deterministic": true, "family": "debug", "source": "synthetic (off-by-one class, cf. real fixes in trained-assist-agent git history)" }
+    },
+    {
+      "id": "t08-review-subjective",
+      "check": "judge",
+      "prompt": "Review this JavaScript function and name its single most important correctness risk in one sentence: `function firstWord(s){ return s.split(' ')[0]; }`",
+      "reference": "Should identify that input with leading whitespace / empty / non-space separators (tabs, newlines) yields an empty or wrong first token; should mention empty-string handling.",
+      "meta": { "deterministic": false, "family": "review", "source": "synthetic" }
+    }
+  ]
+}

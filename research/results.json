@@ -1,0 +1,5202 @@
+{
+  "generated_at": "2026-09-26T01:22:23.017Z",
+  "builds": {
+    "B1": {
+      "description": "single free model (nvidia/nemotron-3-ultra-550b-a55b:free)",
+      "runs": {
+        "t01-arith": {
+          "task": "t01-arith",
+          "build": "B1",
+          "check": "exact",
+          "deterministic": true,
+          "output": "4306",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "got=4306 want=4306",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 349,
+          "tokens": 116,
+          "cost_usd": 0,
+          "meta": {
+            "output": "4306",
+            "calls": 1,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 349,
+            "tokens": 116,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t02-json-extract": {
+          "task": "t02-json-extract",
+          "build": "B1",
+          "check": "schema",
+          "deterministic": true,
+          "output": "{\n  \"name\": \"Maria Petrova\",\n  \"email\": \"maria.petrova@example.com\",\n  \"company\": \"Acme Robotics\",\n  \"role\": \"CTO\",\n  \"city\": \"Kazan\"\n}",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "schema+values ok",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 924,
+          "tokens": 270,
+          "cost_usd": 0,
+          "meta": {
+            "output": "{\n  \"name\": \"Maria Petrova\",\n  \"email\": \"maria.petrova@example.com\",\n  \"company\": \"Acme Robotics\",\n  \"role\": \"CTO\",\n  \"city\": \"Kazan\"\n}",
+            "calls": 1,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 924,
+            "tokens": 270,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t03-fields-contains": {
+          "task": "t03-fields-contains",
+          "build": "B1",
+          "check": "contains",
+          "deterministic": true,
+          "output": "Ivan Kuznetsov\nivan.kuznetsov@nordwind.ru\n+7 903 210-44-55\nNordwind Logistics\nSaint Petersburg",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "all 5 present",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 446,
+          "tokens": 512,
+          "cost_usd": 0,
+          "meta": {
+            "output": "Ivan Kuznetsov\nivan.kuznetsov@nordwind.ru\n+7 903 210-44-55\nNordwind Logistics\nSaint Petersburg",
+            "calls": 1,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 446,
+            "tokens": 512,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t04-palindrome-test": {
+          "task": "t04-palindrome-test",
+          "build": "B1",
+          "check": "test",
+          "deterministic": true,
+          "output": "function isPalindrome(s) {\n  const cleaned = s.replace(/[^a-z0-9]/gi, '').toLowerCase();\n  return cleaned === cleaned.split('').reverse().join('');\n}",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "harness returned true",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 336,
+          "tokens": 244,
+          "cost_usd": 0,
+          "meta": {
+            "output": "function isPalindrome(s) {\n  const cleaned = s.replace(/[^a-z0-9]/gi, '').toLowerCase();\n  return cleaned === cleaned.split('').reverse().join('');\n}",
+            "calls": 1,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 336,
+            "tokens": 244,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t05-fizzbuzz-test": {
+          "task": "t05-fizzbuzz-test",
+          "build": "B1",
+          "check": "test",
+          "deterministic": true,
+          "output": "function fizzbuzz(n) {\n  const result = [];\n  for (let i = 1; i <= n; i++) {\n    if (i % 15 === 0) {\n      result.push(\"FizzBuzz\");\n    } else if (i % 3 === 0) {\n      result.push(\"Fizz\");\n    } else if (i % 5 === 0) {\n      result.push(\"Buzz\");\n    } else {\n      result.push(i);\n    }\n  }\n  return result;\n}",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "harness returned true",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 343,
+          "tokens": 390,
+          "cost_usd": 0,
+          "meta": {
+            "output": "function fizzbuzz(n) {\n  const result = [];\n  for (let i = 1; i <= n; i++) {\n    if (i % 15 === 0) {\n      result.push(\"FizzBuzz\");\n    } else if (i % 3 === 0) {\n      result.push(\"Fizz\");\n    } else if (i % 5 === 0) {\n      result.push(\"Buzz\");\n    } else {\n      result.push(i);\n    }\n  }\n  return result;\n}",
+            "calls": 1,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 343,
+            "tokens": 390,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t06-python-output": {
+          "task": "t06-python-output",
+          "build": "B1",
+          "check": "exact",
+          "deterministic": true,
+          "output": "30",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "got=30 want=30",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 345,
+          "tokens": 196,
+          "cost_usd": 0,
+          "meta": {
+            "output": "30",
+            "calls": 1,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 345,
+            "tokens": 196,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t07-find-bug-line": {
+          "task": "t07-find-bug-line",
+          "build": "B1",
+          "check": "exact",
+          "deterministic": true,
+          "output": "3",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "got=3 want=3",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 383,
+          "tokens": 304,
+          "cost_usd": 0,
+          "meta": {
+            "output": "3",
+            "calls": 1,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 383,
+            "tokens": 304,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t08-review-subjective": {
+          "task": "t08-review-subjective",
+          "build": "B1",
+          "check": "judge",
+          "deterministic": false,
+          "output": "It incorrectly returns an empty string for inputs with leading whitespace (e.g., `\" hello\"` returns `\"\"` instead of `\"hello\"`).",
+          "verdict": "pass",
+          "verdict_kind": "judge",
+          "detail": "judge: Identifies the core risk of leading whitespace yielding an empty first token.",
+          "judge_model": "nvidia/nemotron-3.5-lightning:free",
+          "error": null,
+          "calls": 1,
+          "latency_ms": 338,
+          "tokens": 343,
+          "cost_usd": 0,
+          "meta": {
+            "output": "It incorrectly returns an empty string for inputs with leading whitespace (e.g., `\" hello\"` returns `\"\"` instead of `\"hello\"`).",
+            "calls": 1,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 338,
+            "tokens": 343,
+            "costUsd": 0,
+            "error": null
+          }
+        }
+      }
+    },
+    "B2": {
+      "description": "free ensemble across families (nvidia+google+alibaba+inclusionai+cohere), Hermes arbitrates disagreement",
+      "runs": {
+        "t01-arith": {
+          "task": "t01-arith",
+          "build": "B2",
+          "check": "exact",
+          "deterministic": true,
+          "output": "4306",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "got=4306 want=4306",
+          "judge_model": null,
+          "error": null,
+          "calls": 5,
+          "latency_ms": 2129,
+          "tokens": 447,
+          "cost_usd": 0,
+          "meta": {
+            "output": "4306",
+            "calls": 5,
+            "members": [
+              {
+                "family": "nvidia",
+                "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                "ok": true,
+                "error": null,
+                "text": "4306",
+                "latencyMs": 381,
+                "tokens": 227
+              },
+              {
+                "family": "google",
+                "model": "google/gemma-4-26b-a4b-it:free",
+                "ok": false,
+                "error": "Provider returned error",
+                "text": "",
+                "latencyMs": 124,
+                "tokens": null
+              },
+              {
+                "family": "alibaba",
+                "model": "qwen/qwen3.8-27b:free",
+                "ok": false,
+                "error": "Provider returned error",
+                "text": "",
+                "latencyMs": 200,
+                "tokens": null
+              },
+              {
+                "family": "inclusionai",
+                "model": "inclusionai/ling-3.0-flash-sante:free",
+                "ok": true,
+                "error": null,
+                "text": "4306",
+                "latencyMs": 1095,
+                "tokens": 111
+              },
+              {
+                "family": "cohere",
+                "model": "cohere/north-mini-code:free",
+                "ok": true,
+                "error": null,
+                "text": "4306",
+                "latencyMs": 329,
+                "tokens": 109
+              }
+            ],
+            "agreement": true,
+            "arbitrated": false,
+            "hermesReasoning": null,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 2129,
+            "tokens": 447,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t02-json-extract": {
+          "task": "t02-json-extract",
+          "build": "B2",
+          "check": "schema",
+          "deterministic": true,
+          "output": "{\n  \"name\": \"Maria Petrova\",\n  \"email\": \"maria.petrova@example.com\",\n  \"company\": \"Acme Robotics\",\n  \"role\": \"CTO\",\n  \"city\": \"Kazan\"\n}",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "schema+values ok",
+          "judge_model": null,
+          "error": null,
+          "calls": 6,
+          "latency_ms": 1944,
+          "tokens": 2391,
+          "cost_usd": 0,
+          "meta": {
+            "output": "{\n  \"name\": \"Maria Petrova\",\n  \"email\": \"maria.petrova@example.com\",\n  \"company\": \"Acme Robotics\",\n  \"role\": \"CTO\",\n  \"city\": \"Kazan\"\n}",
+            "calls": 6,
+            "members": [
+              {
+                "family": "nvidia",
+                "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                "ok": true,
+                "error": null,
+                "text": "{\n  \"name\": \"Maria Petrova\",\n  \"email\": \"maria.petrova@example.com\",\n  \"company\": \"Acme Robotics\",\n  \"role\": \"CTO\",\n  \"city\": \"Kazan\"\n}",
+                "latencyMs": 337,
+                "tokens": 270
+              },
+              {
+                "family": "google",
+                "model": "google/gemma-4-26b-a4b-it:free",
+                "ok": false,
+                "error": "Provider returned error",
+                "text": "",
+                "latencyMs": 139,
+                "tokens": null
+              },
+              {
+                "family": "alibaba",
+                "model": "qwen/qwen3.8-27b:free",
+                "ok": false,
+                "error": "Provider returned error",
+                "text": "",
+                "latencyMs": 204,
+                "tokens": null
+              },
+              {
+                "family": "inclusionai",
+                "model": "inclusionai/ling-3.0-flash-sante:free",
+                "ok": true,
+                "error": null,
+                "text": "{\"name\": \"Maria Petrova\", \"email\": \"maria.petrova@example.com\", \"company\": \"Acme Robotics\", \"role\": \"CTO\", \"city\": \"Kazan\"}",
+                "latencyMs": 720,
+                "tokens": 267
+              },
+              {
+                "family": "cohere",
+                "model": "cohere/north-mini-code:free",
+                "ok": true,
+                "error": null,
+                "text": "{\n  \"name\": \"Maria Petrova\",\n  \"email\": \"maria.petrova@example.com\",\n  \"company\": \"Acme Robotics\",\n  \"role\": \"CTO\",\n  \"city\": \"Kazan\"\n}",
+                "latencyMs": 544,
+                "tokens": 324
+              }
+            ],
+            "agreement": false,
+            "arbitrated": true,
+            "hermesReasoning": null,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 1944,
+            "tokens": 2391,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t03-fields-contains": {
+          "task": "t03-fields-contains",
+          "build": "B2",
+          "check": "contains",
+          "deterministic": true,
+          "output": "Ivan Kuznetsov\nivan.kuznetsov@nordwind.ru\n+7 903 210-44-55\nNordwind Logistics\nSaint Petersburg",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "all 5 present",
+          "judge_model": null,
+          "error": null,
+          "calls": 5,
+          "latency_ms": 2051,
+          "tokens": 1336,
+          "cost_usd": 0,
+          "meta": {
+            "output": "Ivan Kuznetsov\nivan.kuznetsov@nordwind.ru\n+7 903 210-44-55\nNordwind Logistics\nSaint Petersburg",
+            "calls": 5,
+            "members": [
+              {
+                "family": "nvidia",
+                "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                "ok": true,
+                "error": null,
+                "text": "Ivan Kuznetsov\nivan.kuznetsov@nordwind.ru\n+7 903 210-44-55\nNordwind Logistics\nSaint Petersburg",
+                "latencyMs": 512,
+                "tokens": 518
+              },
+              {
+                "family": "google",
+                "model": "google/gemma-4-26b-a4b-it:free",
+                "ok": false,
+                "error": "Provider returned error",
+                "text": "",
+                "latencyMs": 156,
+                "tokens": null
+              },
+              {
+                "family": "alibaba",
+                "model": "qwen/qwen3.8-27b:free",
+                "ok": false,
+                "error": "Provider returned error",
+                "text": "",
+                "latencyMs": 202,
+                "tokens": null
+              },
+              {
+                "family": "inclusionai",
+                "model": "inclusionai/ling-3.0-flash-sante:free",
+                "ok": true,
+                "error": null,
+                "text": "Ivan Kuznetsov\nivan.kuznetsov@nordwind.ru\n+7 903 210-44-55\nNordwind Logistics\nSaint Petersburg",
+                "latencyMs": 770,
+                "tokens": 545
+              },
+              {
+                "family": "cohere",
+                "model": "cohere/north-mini-code:free",
+                "ok": true,
+                "error": null,
+                "text": "Ivan Kuznetsov\nivan.kuznetsov@nordwind.ru\n+7 903 210-44-55\nNordwind Logistics\nSaint Petersburg",
+                "latencyMs": 411,
+                "tokens": 273
+              }
+            ],
+            "agreement": true,
+            "arbitrated": false,
+            "hermesReasoning": null,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 2051,
+            "tokens": 1336,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t04-palindrome-test": {
+          "task": "t04-palindrome-test",
+          "build": "B2",
+          "check": "test",
+          "deterministic": true,
+          "output": "function isPalindrome(s) {\n  const cleaned = s.replace(/[^a-z0-9]/gi, '').toLowerCase();\n  return cleaned === cleaned.split('').reverse().join('');\n}",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "harness returned true",
+          "judge_model": null,
+          "error": null,
+          "calls": 6,
+          "latency_ms": 1807,
+          "tokens": 2894,
+          "cost_usd": 0,
+          "meta": {
+            "output": "function isPalindrome(s) {\n  const cleaned = s.replace(/[^a-z0-9]/gi, '').toLowerCase();\n  return cleaned === cleaned.split('').reverse().join('');\n}",
+            "calls": 6,
+            "members": [
+              {
+                "family": "nvidia",
+                "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                "ok": true,
+                "error": null,
+                "text": "function isPalindrome(s) {\n  const cleaned = s.replace(/[^a-z0-9]/gi, '').toLowerCase();\n  return cleaned === cleaned.split('').reverse().join('');\n}",
+                "latencyMs": 457,
+                "tokens": 255
+              },
+              {
+                "family": "google",
+                "model": "google/gemma-4-26b-a4b-it:free",
+                "ok": false,
+                "error": "Provider returned error",
+                "text": "",
+                "latencyMs": 123,
+                "tokens": null
+              },
+              {
+                "family": "alibaba",
+                "model": "qwen/qwen3.8-27b:free",
+                "ok": false,
+                "error": "Provider returned error",
+                "text": "",
+                "latencyMs": 206,
+                "tokens": null
+              },
+              {
+                "family": "inclusionai",
+                "model": "inclusionai/ling-3.0-flash-sante:free",
+                "ok": true,
+                "error": null,
+                "text": "```javascript\nfunction isPalindrome(s) {\n  const cleaned = s.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();\n  return cleaned === cleaned.split('').reverse().join('');\n}\n```",
+                "latencyMs": 739,
+                "tokens": 649
+              },
+              {
+                "family": "cohere",
+                "model": "cohere/north-mini-code:free",
+                "ok": true,
+                "error": null,
+                "text": "```javascript\nfunction isPalindrome(s) {\n  const cleaned = s.toLowerCase().replace(/[^a-z0-9]/g, '');\n  return cleaned === cleaned.split('').reverse().join('');\n}\n```",
+                "latencyMs": 282,
+                "tokens": 490
+              }
+            ],
+            "agreement": false,
+            "arbitrated": true,
+            "hermesReasoning": null,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 1807,
+            "tokens": 2894,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t05-fizzbuzz-test": {
+          "task": "t05-fizzbuzz-test",
+          "build": "B2",
+          "check": "test",
+          "deterministic": true,
+          "output": "function fizzbuzz(n) {\n  const result = [];\n  for (let i = 1; i <= n; i++) {\n    if (i % 15 === 0) {\n      result.push(\"FizzBuzz\");\n    } else if (i % 3 === 0) {\n      result.push(\"Fizz\");\n    } else if (i % 5 === 0) {\n      result.push(\"Buzz\");\n    } else {\n      result.push(i);\n    }\n  }\n  return result;\n}",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "harness returned true",
+          "judge_model": null,
+          "error": null,
+          "calls": 6,
+          "latency_ms": 2191,
+          "tokens": 3812,
+          "cost_usd": 0,
+          "meta": {
+            "output": "function fizzbuzz(n) {\n  const result = [];\n  for (let i = 1; i <= n; i++) {\n    if (i % 15 === 0) {\n      result.push(\"FizzBuzz\");\n    } else if (i % 3 === 0) {\n      result.push(\"Fizz\");\n    } else if (i % 5 === 0) {\n      result.push(\"Buzz\");\n    } else {\n      result.push(i);\n    }\n  }\n  return result;\n}",
+            "calls": 6,
+            "members": [
+              {
+                "family": "nvidia",
+                "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                "ok": true,
+                "error": null,
+                "text": "function fizzbuzz(n) {\n  const result = [];\n  for (let i = 1; i <= n; i++) {\n    if (i % 15 === 0) {\n      result.push(\"FizzBuzz\");\n    } else if (i % 3 === 0) {\n      result.push(\"Fizz\");\n    } else if (i % 5 === 0) {\n      result.push(\"Buzz\");\n    } else {\n      result.push(i);\n    }\n  }\n  return result;\n}",
+                "latencyMs": 587,
+                "tokens": 390
+              },
+              {
+                "family": "google",
+                "model": "google/gemma-4-26b-a4b-it:free",
+                "ok": false,
+                "error": "Provider returned error",
+                "text": "",
+                "latencyMs": 127,
+                "tokens": null
+              },
+              {
+                "family": "alibaba",
+                "model": "qwen/qwen3.8-27b:free",
+                "ok": false,
+                "error": "Provider returned error",
+                "text": "",
+                "latencyMs": 485,
+                "tokens": null
+              },
+              {
+                "family": "inclusionai",
+                "model": "inclusionai/ling-3.0-flash-sante:free",
+                "ok": true,
+                "error": null,
+                "text": "```javascript\nfunction fizzbuzz(n) {\n  const result = [];\n  for (let i = 1; i <= n; i++) {\n    if (i % 15 === 0) result.push(\"FizzBuzz\");\n    else if (i % 3 === 0) result.push(\"Fizz\");\n    else if (i % 5 === 0) result.push(\"Buzz\");\n    else result.push(i);\n  }\n  return result;\n}\n```",
+                "latencyMs": 719,
+                "tokens": 842
+              },
+              {
+                "family": "cohere",
+                "model": "cohere/north-mini-code:free",
+                "ok": true,
+                "error": null,
+                "text": "```javascript\nfunction fizzbuzz(n) {\n  const result = [];\n  for (let i = 1; i <= n; i++) {\n    if (i % 3 === 0 && i % 5 === 0) {\n      result.push(\"FizzBuzz\");\n    } else if (i % 3 === 0) {\n      result.push(\"Fizz\");\n    } else if (i % 5 === 0) {\n      result.push(\"Buzz\");\n    } else {\n      result.push(i);\n    }\n  }\n  return result;\n}\n```",
+                "latencyMs": 273,
+                "tokens": 857
+              }
+            ],
+            "agreement": false,
+            "arbitrated": true,
+            "hermesReasoning": null,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 2191,
+            "tokens": 3812,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t06-python-output": {
+          "task": "t06-python-output",
+          "build": "B2",
+          "check": "exact",
+          "deterministic": true,
+          "output": "30",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "got=30 want=30",
+          "judge_model": null,
+          "error": null,
+          "calls": 5,
+          "latency_ms": 1984,
+          "tokens": 610,
+          "cost_usd": 0,
+          "meta": {
+            "output": "30",
+            "calls": 5,
+            "members": [
+              {
+                "family": "nvidia",
+                "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                "ok": true,
+                "error": null,
+                "text": "30",
+                "latencyMs": 342,
+                "tokens": 195
+              },
+              {
+                "family": "google",
+                "model": "google/gemma-4-26b-a4b-it:free",
+                "ok": false,
+                "error": "Provider returned error",
+                "text": "",
+                "latencyMs": 161,
+                "tokens": null
+              },
+              {
+                "family": "alibaba",
+                "model": "qwen/qwen3.8-27b:free",
+                "ok": false,
+                "error": "Provider returned error",
+                "text": "",
+                "latencyMs": 213,
+                "tokens": null
+              },
+              {
+                "family": "inclusionai",
+                "model": "inclusionai/ling-3.0-flash-sante:free",
+                "ok": true,
+                "error": null,
+                "text": "30",
+                "latencyMs": 872,
+                "tokens": 256
+              },
+              {
+                "family": "cohere",
+                "model": "cohere/north-mini-code:free",
+                "ok": true,
+                "error": null,
+                "text": "30",
+                "latencyMs": 396,
+                "tokens": 159
+              }
+            ],
+            "agreement": true,
+            "arbitrated": false,
+            "hermesReasoning": null,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 1984,
+            "tokens": 610,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t07-find-bug-line": {
+          "task": "t07-find-bug-line",
+          "build": "B2",
+          "check": "exact",
+          "deterministic": true,
+          "output": "3",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "got=3 want=3",
+          "judge_model": null,
+          "error": null,
+          "calls": 5,
+          "latency_ms": 2561,
+          "tokens": 983,
+          "cost_usd": 0,
+          "meta": {
+            "output": "3",
+            "calls": 5,
+            "members": [
+              {
+                "family": "nvidia",
+                "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                "ok": true,
+                "error": null,
+                "text": "3",
+                "latencyMs": 335,
+                "tokens": 320
+              },
+              {
+                "family": "google",
+                "model": "google/gemma-4-26b-a4b-it:free",
+                "ok": false,
+                "error": "Provider returned error",
+                "text": "",
+                "latencyMs": 125,
+                "tokens": null
+              },
+              {
+                "family": "alibaba",
+                "model": "qwen/qwen3.8-27b:free",
+                "ok": false,
+                "error": "Provider returned error",
+                "text": "",
+                "latencyMs": 534,
+                "tokens": null
+              },
+              {
+                "family": "inclusionai",
+                "model": "inclusionai/ling-3.0-flash-sante:free",
+                "ok": true,
+                "error": null,
+                "text": "3",
+                "latencyMs": 1154,
+                "tokens": 335
+              },
+              {
+                "family": "cohere",
+                "model": "cohere/north-mini-code:free",
+                "ok": true,
+                "error": null,
+                "text": "3",
+                "latencyMs": 413,
+                "tokens": 328
+              }
+            ],
+            "agreement": true,
+            "arbitrated": false,
+            "hermesReasoning": null,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 2561,
+            "tokens": 983,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t08-review-subjective": {
+          "task": "t08-review-subjective",
+          "build": "B2",
+          "check": "judge",
+          "deterministic": false,
+          "output": "It incorrectly returns an empty string for inputs with leading whitespace (e.g., `\" hello\"` yields `\"\"` instead of `\"hello\"`).",
+          "verdict": "fail",
+          "verdict_kind": "judge",
+          "detail": "judge failed: timeout 120000ms",
+          "judge_model": "nvidia/nemotron-3.5-lightning:free",
+          "error": null,
+          "calls": 6,
+          "latency_ms": 2078,
+          "tokens": 3584,
+          "cost_usd": 0,
+          "meta": {
+            "output": "It incorrectly returns an empty string for inputs with leading whitespace (e.g., `\" hello\"` yields `\"\"` instead of `\"hello\"`).",
+            "calls": 6,
+            "members": [
+              {
+                "family": "nvidia",
+                "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                "ok": true,
+                "error": null,
+                "text": "It incorrectly returns an empty string for inputs with leading whitespace (e.g., `\" hello\"` yields `\"\"` instead of `\"hello\"`).",
+                "latencyMs": 341,
+                "tokens": 452
+              },
+              {
+                "family": "google",
+                "model": "google/gemma-4-26b-a4b-it:free",
+                "ok": false,
+                "error": "Provider returned error",
+                "text": "",
+                "latencyMs": 124,
+                "tokens": null
+              },
+              {
+                "family": "alibaba",
+                "model": "qwen/qwen3.8-27b:free",
+                "ok": false,
+                "error": "Provider returned error",
+                "text": "",
+                "latencyMs": 207,
+                "tokens": null
+              },
+              {
+                "family": "inclusionai",
+                "model": "inclusionai/ling-3.0-flash-sante:free",
+                "ok": true,
+                "error": null,
+                "text": "It returns an empty string for inputs with leading spaces instead of the actual first word.",
+                "latencyMs": 830,
+                "tokens": 1378
+              },
+              {
+                "family": "cohere",
+                "model": "cohere/north-mini-code:free",
+                "ok": true,
+                "error": null,
+                "text": "The function assumes `s` is a defined string and will throw a `TypeError` if `s` is `null`, `undefined`, or not a string at all.",
+                "latencyMs": 576,
+                "tokens": 317
+              }
+            ],
+            "agreement": false,
+            "arbitrated": true,
+            "hermesReasoning": null,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 2078,
+            "tokens": 3584,
+            "costUsd": 0,
+            "error": null
+          }
+        }
+      }
+    },
+    "B3": {
+      "description": "Hermes critique loop: frame challenges -> solve -> Hermes critiques -> revise",
+      "runs": {
+        "t01-arith": {
+          "task": "t01-arith",
+          "build": "B3",
+          "check": "exact",
+          "deterministic": true,
+          "output": "4306",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "got=4306 want=4306",
+          "judge_model": null,
+          "error": null,
+          "calls": 4,
+          "latency_ms": 2977,
+          "tokens": 3612,
+          "cost_usd": 0,
+          "meta": {
+            "output": "4306",
+            "calls": 4,
+            "solverModel": "inclusionai/ling-3.0-flash-sante:free",
+            "frameQuestions": [
+              "Did you compute 47 × (89 + 123) instead of (47 × 89) + 123?",
+              "Is the result exactly 4306 with no decimal point, text, or formatting?",
+              "Would 47 × 98 + 123 or 74 × 89 + 123 change your answer?"
+            ],
+            "critique": {
+              "has_errors": true,
+              "critique": "The answer includes extra text beyond the integer, violating the instruction to reply with only the integer.",
+              "corrected_hint": "Remove all explanatory text and output only the integer 4306."
+            },
+            "critiqueError": null,
+            "revised": true,
+            "firstAnswer": "4306\n\n- No, I computed (47 × 89) + 123, not 4",
+            "latencyMs": 2977,
+            "tokens": 3612,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t02-json-extract": {
+          "task": "t02-json-extract",
+          "build": "B3",
+          "check": "schema",
+          "deterministic": true,
+          "output": "{\"name\": \"Maria Petrova\", \"email\": \"maria.petrova@example.com\", \"company\": \"Acme Robotics\", \"role\": \"CTO\", \"city\": \"Kazan\"}",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "schema+values ok",
+          "judge_model": null,
+          "error": null,
+          "calls": 4,
+          "latency_ms": 2853,
+          "tokens": 3140,
+          "cost_usd": 0,
+          "meta": {
+            "output": "{\"name\": \"Maria Petrova\", \"email\": \"maria.petrova@example.com\", \"company\": \"Acme Robotics\", \"role\": \"CTO\", \"city\": \"Kazan\"}",
+            "calls": 4,
+            "solverModel": "inclusionai/ling-3.0-flash-sante:free",
+            "frameQuestions": [
+              "Does the output contain exactly the keys name, email, company, role, city with no extra keys?",
+              "Is the email value 'maria.petrova@example.com' without surrounding parentheses?",
+              "Is the city value 'Kazan' and not 'based in Kazan'?"
+            ],
+            "critique": {
+              "has_errors": false,
+              "critique": "The candidate answer correctly extracts all five fields with accurate values and proper JSON format.",
+              "corrected_hint": "No correction needed."
+            },
+            "critiqueError": null,
+            "revised": true,
+            "firstAnswer": "{\"name\": \"Maria Petrova\", \"email\": \"maria.petrova@example.com\", \"company\": \"Acme Robotics\", \"role\": \"CTO\", \"city\": \"Kazan\"}",
+            "latencyMs": 2853,
+            "tokens": 3140,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t03-fields-contains": {
+          "task": "t03-fields-contains",
+          "build": "B3",
+          "check": "contains",
+          "deterministic": true,
+          "output": "Ivan Kuznetsov\nivan.kuznetsov@nordwind.ru\n+7 903 210-44-55\nNordwind Logistics\nSaint Petersburg",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "all 5 present",
+          "judge_model": null,
+          "error": null,
+          "calls": 4,
+          "latency_ms": 2393,
+          "tokens": 4024,
+          "cost_usd": 0,
+          "meta": {
+            "output": "Ivan Kuznetsov\nivan.kuznetsov@nordwind.ru\n+7 903 210-44-55\nNordwind Logistics\nSaint Petersburg",
+            "calls": 4,
+            "solverModel": "inclusionai/ling-3.0-flash-sante:free",
+            "frameQuestions": [
+              "Does the output list all five entities (person, email, phone, company, city) exactly as they appear in the text, one per line?",
+              "Are the email address and phone number copied verbatim, preserving all punctuation, spacing, and case?",
+              "Is 'Saint Petersburg' treated as a single city entity rather than split into 'Saint' and 'Petersburg'?"
+            ],
+            "critique": {
+              "has_errors": true,
+              "critique": "The candidate answer includes three extra lines of commentary ('Yes, the output lists...', etc.) which violates the instruction 'no extra commentary'. Only the five named entities should be listed, one per line.",
+              "corrected_hint": "Remove all lines after 'Saint Petersburg' so that only the five entities remain, each on its own line."
+            },
+            "critiqueError": null,
+            "revised": true,
+            "firstAnswer": "Ivan Kuznetsov\nivan.kuznetsov@nordwind.ru\n+7 903 210-44-55\nNordwind Logistics\nSaint Petersburg\n\nYes, the output lists all five entities exactly as they appear in the text, one per line.\nYes, the email address and phone number are copied verbatim, preserving all punctuation, spacing, and case.\nYes, 'Saint Petersburg' is treated as a single city entity rather than split into 'Saint' and 'Petersburg'.",
+            "latencyMs": 2393,
+            "tokens": 4024,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t04-palindrome-test": {
+          "task": "t04-palindrome-test",
+          "build": "B3",
+          "check": "test",
+          "deterministic": true,
+          "output": "",
+          "verdict": "fail",
+          "verdict_kind": "deterministic",
+          "detail": "no code in output",
+          "judge_model": null,
+          "error": "no answer produced",
+          "calls": 3,
+          "latency_ms": 1604,
+          "tokens": 2941,
+          "cost_usd": 0,
+          "meta": {
+            "output": "",
+            "calls": 3,
+            "solverModel": "dots-studio/dots-3-note-preview:free",
+            "frameQuestions": [
+              "Does it return true for an empty string or a string containing only non-alphanumeric characters?",
+              "Does it correctly handle Unicode letters (e.g., 'é', 'ß', '中') and surrogate pairs?",
+              "Does it avoid mutating the input string or creating excessive intermediate allocations?"
+            ],
+            "critique": {
+              "has_errors": true,
+              "critique": "No function provided; the answer is empty, so it fails correctness, completeness, and format requirements.",
+              "corrected_hint": "Write a function isPalindrome(s) that removes non-alphanumeric characters, converts to lower case, and returns s === s.split('').reverse().join('')"
+            },
+            "critiqueError": null,
+            "revised": false,
+            "firstAnswer": "",
+            "latencyMs": 1604,
+            "tokens": 2941,
+            "costUsd": 0,
+            "error": "no answer produced"
+          }
+        },
+        "t05-fizzbuzz-test": {
+          "task": "t05-fizzbuzz-test",
+          "build": "B3",
+          "check": "test",
+          "deterministic": true,
+          "output": "function fizzbuzz(n) {\n  const result = [];\n  for (let i = 1; i <= n; i++) {\n    if (i % 15 === 0) result.push(\"FizzBuzz\");\n    else if (i % 3 === 0) result.push(\"Fizz\");\n    else if (i % 5 === 0) result.push(\"Buzz\");\n    else result.push(i);\n  }\n  return result;\n}",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "harness returned true",
+          "judge_model": null,
+          "error": null,
+          "calls": 4,
+          "latency_ms": 2978,
+          "tokens": 3979,
+          "cost_usd": 0,
+          "meta": {
+            "output": "function fizzbuzz(n) {\n  const result = [];\n  for (let i = 1; i <= n; i++) {\n    if (i % 15 === 0) result.push(\"FizzBuzz\");\n    else if (i % 3 === 0) result.push(\"Fizz\");\n    else if (i % 5 === 0) result.push(\"Buzz\");\n    else result.push(i);\n  }\n  return result;\n}",
+            "calls": 4,
+            "solverModel": "inclusionai/ling-3.0-flash-sante:free",
+            "frameQuestions": [
+              "Does the function return an empty array for n ≤ 0?",
+              "Is the 15th element 'FizzBuzz' (not 'Fizz' or 'Buzz')?",
+              "Are non-multiple positions numbers (not strings)?"
+            ],
+            "critique": {
+              "has_errors": true,
+              "critique": "The response includes extra explanatory text and markdown code fences, violating the instruction to reply with the function only.",
+              "corrected_hint": "Output only the function definition without any additional text or markdown formatting."
+            },
+            "critiqueError": null,
+            "revised": true,
+            "firstAnswer": "```javascript\nfunction fizzbuzz(n) {\n  const result = [];\n  for (let i = 1; i <= n; i++) {\n    if (i % 15 === 0) result.push(\"FizzBuzz\");\n    else if (i % 3 === 0) result.push(\"Fizz\");\n    else if (i % 5 === 0) result.push(\"Buzz\");\n    else result.push(i);\n  }\n  return result;\n}\n```\n\n**Answers to your questions:**\n\n- **n ≤ 0:** Yes, it returns an empty array `[]` because the loop condition `i <= n` is false from the start.\n- **15th element:** Yes, `fizzbuzz(15)[14]` is `\"FizzBuzz\"` since 15 is divisible by both 3 and 5.\n- **Non-multiples:** Yes, they are numbers (e.g., `1`, `2`, `4`), not strings.",
+            "latencyMs": 2978,
+            "tokens": 3979,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t06-python-output": {
+          "task": "t06-python-output",
+          "build": "B3",
+          "check": "exact",
+          "deterministic": true,
+          "output": "30",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "got=30 want=30",
+          "judge_model": null,
+          "error": null,
+          "calls": 4,
+          "latency_ms": 2761,
+          "tokens": 3478,
+          "cost_usd": 0,
+          "meta": {
+            "output": "30",
+            "calls": 4,
+            "solverModel": "inclusionai/ling-3.0-flash-sante:free",
+            "frameQuestions": [
+              "What is the sum of squares of integers from 0 to 4?",
+              "Does range(5) produce the value 5?",
+              "What is the value of i*i when i equals 4?"
+            ],
+            "critique": {
+              "has_errors": true,
+              "critique": "The candidate answer includes explanatory text beyond the required printed value. The task explicitly states: 'Reply with only the printed value.'",
+              "corrected_hint": "Output only the number 30 without any additional text."
+            },
+            "critiqueError": null,
+            "revised": true,
+            "firstAnswer": "30\n\n- Sum of squares of integers from 0 to 4: 30\n- Does range(5) produce the value 5? No, it produces 0, 1, 2, 3, and 4 (stopping before 5).\n- Value of i*i when i equals 4: 16",
+            "latencyMs": 2761,
+            "tokens": 3478,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t07-find-bug-line": {
+          "task": "t07-find-bug-line",
+          "build": "B3",
+          "check": "exact",
+          "deterministic": true,
+          "output": "3",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "got=3 want=3",
+          "judge_model": null,
+          "error": null,
+          "calls": 4,
+          "latency_ms": 2481,
+          "tokens": 3892,
+          "cost_usd": 0,
+          "meta": {
+            "output": "3",
+            "calls": 4,
+            "solverModel": "inclusionai/ling-3.0-flash-sante:free",
+            "frameQuestions": [
+              "What happens when `i` equals `items.length` in the loop condition?",
+              "Why does adding `undefined` to a number produce `NaN`?",
+              "How would the behavior change if the loop condition were `i < items.length`?"
+            ],
+            "critique": {
+              "has_errors": true,
+              "critique": "The candidate answer includes an explanation after the line number, but the task requires replying with only the line number.",
+              "corrected_hint": "Return only the line number, e.g., '3'."
+            },
+            "critiqueError": null,
+            "revised": true,
+            "firstAnswer": "3\n\n**What happens when `i` equals `items.length`?**  \nThe loop accesses `items[items.length]`, which is out of bounds and returns `undefined`.\n\n**Why does adding `undefined` to a number produce `NaN`?**  \nJavaScript cannot convert `undefined` to a valid number (`Number(undefined)` is `NaN`), and any arithmetic operation with `NaN` results in `NaN`.\n\n**How would the behavior change with `i < items.length`?**  \nThe loop would iterate only over valid indices `0` through `items.length - 1`, skipping the out-of-bounds access, so `sum` would correctly total the array elements without becoming `NaN`.",
+            "latencyMs": 2481,
+            "tokens": 3892,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t08-review-subjective": {
+          "task": "t08-review-subjective",
+          "build": "B3",
+          "check": "judge",
+          "deterministic": false,
+          "output": "The function returns an empty string for inputs with leading whitespace instead of the first word.",
+          "verdict": "fail",
+          "verdict_kind": "judge",
+          "detail": "judge failed: empty content",
+          "judge_model": "nvidia/nemotron-3.5-lightning:free",
+          "error": null,
+          "calls": 4,
+          "latency_ms": 2374,
+          "tokens": 3302,
+          "cost_usd": 0,
+          "meta": {
+            "output": "The function returns an empty string for inputs with leading whitespace instead of the first word.",
+            "calls": 4,
+            "solverModel": "inclusionai/ling-3.0-flash-sante:free",
+            "frameQuestions": [
+              "What does firstWord('') return?",
+              "What does firstWord('  hello world') return?",
+              "What does firstWord('hello\\tworld') return?"
+            ],
+            "critique": null,
+            "critiqueError": "empty content",
+            "revised": true,
+            "firstAnswer": "The function's most important correctness risk is that it only splits on literal space characters, so it returns empty strings for leading whitespace and fails to split on tabs or other whitespace entirely.\n\n**Specific cases:**\n- `firstWord('')` returns `''` (empty string)\n- `firstWord('  hello world')` returns `''` (empty string, because split creates empty elements for leading spaces)\n- `firstWord('hello\\tworld')` returns `'hello\\tworld'` (the whole string unsplit, since tab ≠ space)",
+            "latencyMs": 2374,
+            "tokens": 3302,
+            "costUsd": 0,
+            "error": null
+          }
+        }
+      }
+    },
+    "B5": {
+      "description": "single free stealth model (stealth/space-bunny-alpha) — the \"Space Bunny Free\" evaluation",
+      "runs": {
+        "t01-arith": {
+          "task": "t01-arith",
+          "build": "B5",
+          "check": "exact",
+          "deterministic": true,
+          "output": "4306",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "got=4306 want=4306",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 1587,
+          "tokens": 229,
+          "cost_usd": 0,
+          "meta": {
+            "output": "4306",
+            "calls": 1,
+            "primaryModel": "stealth/space-bunny-alpha",
+            "latencyMs": 1587,
+            "tokens": 229,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t02-json-extract": {
+          "task": "t02-json-extract",
+          "build": "B5",
+          "check": "schema",
+          "deterministic": true,
+          "output": "{\"name\":\"Maria Petrova\",\"email\":\"maria.petrova@example.com\",\"company\":\"Acme Robotics\",\"role\":\"CTO\",\"city\":\"Kazan\"}",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "schema+values ok",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 1073,
+          "tokens": 303,
+          "cost_usd": 0,
+          "meta": {
+            "output": "{\"name\":\"Maria Petrova\",\"email\":\"maria.petrova@example.com\",\"company\":\"Acme Robotics\",\"role\":\"CTO\",\"city\":\"Kazan\"}",
+            "calls": 1,
+            "primaryModel": "stealth/space-bunny-alpha",
+            "latencyMs": 1073,
+            "tokens": 303,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t03-fields-contains": {
+          "task": "t03-fields-contains",
+          "build": "B5",
+          "check": "contains",
+          "deterministic": true,
+          "output": "Ivan Kuznetsov\nivan.kuznetsov@nordwind.ru\n+7 903 210-44-55\nNordwind Logistics\nSaint Petersburg",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "all 5 present",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 740,
+          "tokens": 328,
+          "cost_usd": 0,
+          "meta": {
+            "output": "Ivan Kuznetsov\nivan.kuznetsov@nordwind.ru\n+7 903 210-44-55\nNordwind Logistics\nSaint Petersburg",
+            "calls": 1,
+            "primaryModel": "stealth/space-bunny-alpha",
+            "latencyMs": 740,
+            "tokens": 328,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t04-palindrome-test": {
+          "task": "t04-palindrome-test",
+          "build": "B5",
+          "check": "test",
+          "deterministic": true,
+          "output": "function isPalindrome(s) {\n  const cleaned = s.toLowerCase().replace(/[^a-z0-9]/g, \"\");\n  return cleaned === cleaned.split(\"\").reverse().join(\"\");\n}",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "harness returned true",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 717,
+          "tokens": 423,
+          "cost_usd": 0,
+          "meta": {
+            "output": "function isPalindrome(s) {\n  const cleaned = s.toLowerCase().replace(/[^a-z0-9]/g, \"\");\n  return cleaned === cleaned.split(\"\").reverse().join(\"\");\n}",
+            "calls": 1,
+            "primaryModel": "stealth/space-bunny-alpha",
+            "latencyMs": 717,
+            "tokens": 423,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t05-fizzbuzz-test": {
+          "task": "t05-fizzbuzz-test",
+          "build": "B5",
+          "check": "test",
+          "deterministic": true,
+          "output": "function fizzbuzz(n) {\n  return Array.from({ length: n }, (_, i) => {\n    const num = i + 1;\n    if (num % 15 === 0) return \"FizzBuzz\";\n    if (num % 3 === 0) return \"Fizz\";\n    if (num % 5 === 0) return \"Buzz\";\n    return num;\n  });\n}",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "harness returned true",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 653,
+          "tokens": 303,
+          "cost_usd": 0,
+          "meta": {
+            "output": "function fizzbuzz(n) {\n  return Array.from({ length: n }, (_, i) => {\n    const num = i + 1;\n    if (num % 15 === 0) return \"FizzBuzz\";\n    if (num % 3 === 0) return \"Fizz\";\n    if (num % 5 === 0) return \"Buzz\";\n    return num;\n  });\n}",
+            "calls": 1,
+            "primaryModel": "stealth/space-bunny-alpha",
+            "latencyMs": 653,
+            "tokens": 303,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t06-python-output": {
+          "task": "t06-python-output",
+          "build": "B5",
+          "check": "exact",
+          "deterministic": true,
+          "output": "30",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "got=30 want=30",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 873,
+          "tokens": 228,
+          "cost_usd": 0,
+          "meta": {
+            "output": "30",
+            "calls": 1,
+            "primaryModel": "stealth/space-bunny-alpha",
+            "latencyMs": 873,
+            "tokens": 228,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t07-find-bug-line": {
+          "task": "t07-find-bug-line",
+          "build": "B5",
+          "check": "exact",
+          "deterministic": true,
+          "output": "3",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "got=3 want=3",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 594,
+          "tokens": 251,
+          "cost_usd": 0,
+          "meta": {
+            "output": "3",
+            "calls": 1,
+            "primaryModel": "stealth/space-bunny-alpha",
+            "latencyMs": 594,
+            "tokens": 251,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t08-review-subjective": {
+          "task": "t08-review-subjective",
+          "build": "B5",
+          "check": "judge",
+          "deterministic": false,
+          "output": "The main correctness risk is its simplistic whitespace handling: it splits only on literal spaces, so leading spaces return an empty string while tabs or newlines are not treated as word boundaries.",
+          "verdict": "fail",
+          "verdict_kind": "judge",
+          "detail": "judge failed: timeout 120000ms",
+          "judge_model": "nvidia/nemotron-3.5-lightning:free",
+          "error": null,
+          "calls": 1,
+          "latency_ms": 982,
+          "tokens": 446,
+          "cost_usd": 0,
+          "meta": {
+            "output": "The main correctness risk is its simplistic whitespace handling: it splits only on literal spaces, so leading spaces return an empty string while tabs or newlines are not treated as word boundaries.",
+            "calls": 1,
+            "primaryModel": "stealth/space-bunny-alpha",
+            "latencyMs": 982,
+            "tokens": 446,
+            "costUsd": 0,
+            "error": null
+          }
+        }
+      }
+    },
+    "B4": {
+      "description": "free-first chain (10 models) -> cheap paid fallback (cap $2)",
+      "runs": {
+        "t01-arith": {
+          "task": "t01-arith",
+          "build": "B4",
+          "check": "exact",
+          "deterministic": true,
+          "output": "4306",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "got=4306 want=4306",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 351,
+          "tokens": 227,
+          "cost_usd": 0,
+          "meta": {
+            "output": "4306",
+            "calls": 1,
+            "usedPaid": false,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 351,
+            "tokens": 227,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t02-json-extract": {
+          "task": "t02-json-extract",
+          "build": "B4",
+          "check": "schema",
+          "deterministic": true,
+          "output": "{\n  \"name\": \"Maria Petrova\",\n  \"email\": \"maria.petrova@example.com\",\n  \"company\": \"Acme Robotics\",\n  \"role\": \"CTO\",\n  \"city\": \"Kazan\"\n}",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "schema+values ok",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 423,
+          "tokens": 270,
+          "cost_usd": 0,
+          "meta": {
+            "output": "{\n  \"name\": \"Maria Petrova\",\n  \"email\": \"maria.petrova@example.com\",\n  \"company\": \"Acme Robotics\",\n  \"role\": \"CTO\",\n  \"city\": \"Kazan\"\n}",
+            "calls": 1,
+            "usedPaid": false,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 423,
+            "tokens": 270,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t03-fields-contains": {
+          "task": "t03-fields-contains",
+          "build": "B4",
+          "check": "contains",
+          "deterministic": true,
+          "output": "Ivan Kuznetsov\nivan.kuznetsov@nordwind.ru\n+7 903 210-44-55\nNordwind Logistics\nSaint Petersburg",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "all 5 present",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 353,
+          "tokens": 499,
+          "cost_usd": 0,
+          "meta": {
+            "output": "Ivan Kuznetsov\nivan.kuznetsov@nordwind.ru\n+7 903 210-44-55\nNordwind Logistics\nSaint Petersburg",
+            "calls": 1,
+            "usedPaid": false,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 353,
+            "tokens": 499,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t04-palindrome-test": {
+          "task": "t04-palindrome-test",
+          "build": "B4",
+          "check": "test",
+          "deterministic": true,
+          "output": "function isPalindrome(s) {\n  const cleaned = s.replace(/[^a-z0-9]/gi, '').toLowerCase();\n  return cleaned === cleaned.split('').reverse().join('');\n}",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "harness returned true",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 348,
+          "tokens": 313,
+          "cost_usd": 0,
+          "meta": {
+            "output": "function isPalindrome(s) {\n  const cleaned = s.replace(/[^a-z0-9]/gi, '').toLowerCase();\n  return cleaned === cleaned.split('').reverse().join('');\n}",
+            "calls": 1,
+            "usedPaid": false,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 348,
+            "tokens": 313,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t05-fizzbuzz-test": {
+          "task": "t05-fizzbuzz-test",
+          "build": "B4",
+          "check": "test",
+          "deterministic": true,
+          "output": "function fizzbuzz(n) {\n  const result = [];\n  for (let i = 1; i <= n; i++) {\n    if (i % 15 === 0) result.push(\"FizzBuzz\");\n    else if (i % 3 === 0) result.push(\"Fizz\");\n    else if (i % 5 === 0) result.push(\"Buzz\");\n    else result.push(i);\n  }\n  return result;\n}",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "harness returned true",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 345,
+          "tokens": 420,
+          "cost_usd": 0,
+          "meta": {
+            "output": "function fizzbuzz(n) {\n  const result = [];\n  for (let i = 1; i <= n; i++) {\n    if (i % 15 === 0) result.push(\"FizzBuzz\");\n    else if (i % 3 === 0) result.push(\"Fizz\");\n    else if (i % 5 === 0) result.push(\"Buzz\");\n    else result.push(i);\n  }\n  return result;\n}",
+            "calls": 1,
+            "usedPaid": false,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 345,
+            "tokens": 420,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t06-python-output": {
+          "task": "t06-python-output",
+          "build": "B4",
+          "check": "exact",
+          "deterministic": true,
+          "output": "30",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "got=30 want=30",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 343,
+          "tokens": 195,
+          "cost_usd": 0,
+          "meta": {
+            "output": "30",
+            "calls": 1,
+            "usedPaid": false,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 343,
+            "tokens": 195,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t07-find-bug-line": {
+          "task": "t07-find-bug-line",
+          "build": "B4",
+          "check": "exact",
+          "deterministic": true,
+          "output": "3",
+          "verdict": "pass",
+          "verdict_kind": "deterministic",
+          "detail": "got=3 want=3",
+          "judge_model": null,
+          "error": null,
+          "calls": 1,
+          "latency_ms": 421,
+          "tokens": 363,
+          "cost_usd": 0,
+          "meta": {
+            "output": "3",
+            "calls": 1,
+            "usedPaid": false,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 421,
+            "tokens": 363,
+            "costUsd": 0,
+            "error": null
+          }
+        },
+        "t08-review-subjective": {
+          "task": "t08-review-subjective",
+          "build": "B4",
+          "check": "judge",
+          "deterministic": false,
+          "output": "The function incorrectly returns an empty string for inputs with leading spaces and fails to recognize tabs, newlines, or multiple spaces as word delimiters, treating them as part of the first word.",
+          "verdict": "fail",
+          "verdict_kind": "judge",
+          "detail": "judge failed: unparsable",
+          "judge_model": "nvidia/nemotron-3.5-lightning:free",
+          "error": null,
+          "calls": 1,
+          "latency_ms": 347,
+          "tokens": 667,
+          "cost_usd": 0,
+          "meta": {
+            "output": "The function incorrectly returns an empty string for inputs with leading spaces and fails to recognize tabs, newlines, or multiple spaces as word delimiters, treating them as part of the first word.",
+            "calls": 1,
+            "usedPaid": false,
+            "primaryModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "latencyMs": 347,
+            "tokens": 667,
+            "costUsd": 0,
+            "error": null
+          }
+        }
+      }
+    }
+  },
+  "tasks": {
+    "t01-arith": {
+      "id": "t01-arith",
+      "check": "exact",
+      "deterministic": true,
+      "prompt": "Compute (47 * 89) + 123. Reply with only the integer, no explanation."
+    },
+    "t02-json-extract": {
+      "id": "t02-json-extract",
+      "check": "schema",
+      "deterministic": true,
+      "prompt": "Extract structured data from this text into a JSON object with EXACTLY these five keys: name, email, company, role, city. Reply with ONLY the JSON object, no markdown fence:\n\n\"Maria Petrova (maria.petrova@example.com) is CTO at Acme Robotics, based in Kazan.\""
+    },
+    "t03-fields-contains": {
+      "id": "t03-fields-contains",
+      "check": "contains",
+      "deterministic": true,
+      "prompt": "List every named entity from the text below verbatim (company, person, email, phone, city). One per line, no extra commentary.\n\n\"Ivan Kuznetsov, ivan.kuznetsov@nordwind.ru, +7 903 210-44-55, is Head of Sales at Nordwind Logistics in Saint Petersburg.\""
+    },
+    "t04-palindrome-test": {
+      "id": "t04-palindrome-test",
+      "check": "test",
+      "deterministic": true,
+      "prompt": "Write a JavaScript function named `isPalindrome(s)` that returns true when `s` reads the same forwards and backwards, ignoring case and non-alphanumeric characters. Reply with the function only."
+    },
+    "t05-fizzbuzz-test": {
+      "id": "t05-fizzbuzz-test",
+      "check": "test",
+      "deterministic": true,
+      "prompt": "Write a JavaScript function named `fizzbuzz(n)` that returns an array of length n where multiples of 3 are \"Fizz\", multiples of 5 are \"Buzz\", multiples of both are \"FizzBuzz\", and other positions hold the number itself (1-indexed). Reply with the function only."
+    },
+    "t06-python-output": {
+      "id": "t06-python-output",
+      "check": "exact",
+      "deterministic": true,
+      "prompt": "What does this Python program print? Reply with only the printed value.\n\n```python\nx = [i * i for i in range(5)]\nprint(sum(x))\n```"
+    },
+    "t07-find-bug-line": {
+      "id": "t07-find-bug-line",
+      "check": "exact",
+      "deterministic": true,
+      "prompt": "A function is supposed to sum all elements of an array but throws / returns NaN. Which ONE line number contains the bug? Reply with only the line number.\n\n```js\n1: function total(items) {\n2:   let sum = 0;\n3:   for (let i = 0; i <= items.length; i++) {\n4:     sum += items[i];\n5:   }\n6:   return sum;\n7: }\n```"
+    },
+    "t08-review-subjective": {
+      "id": "t08-review-subjective",
+      "check": "judge",
+      "deterministic": false,
+      "prompt": "Review this JavaScript function and name its single most important correctness risk in one sentence: `function firstWord(s){ return s.split(' ')[0]; }`"
+    }
+  },
+  "summary": {
+    "B1": {
+      "deterministic_pass": 7,
+      "deterministic_total": 7,
+      "deterministic_rate": 1,
+      "judge_pass": 1,
+      "judge_total": 1,
+      "errors": 0,
+      "total_latency_ms": 3464,
+      "total_tokens": 2375,
+      "total_cost_usd": 0,
+      "calls": 8
+    },
+    "B2": {
+      "deterministic_pass": 7,
+      "deterministic_total": 7,
+      "deterministic_rate": 1,
+      "judge_pass": 0,
+      "judge_total": 1,
+      "errors": 0,
+      "total_latency_ms": 16745,
+      "total_tokens": 16057,
+      "total_cost_usd": 0,
+      "calls": 44
+    },
+    "B3": {
+      "deterministic_pass": 6,
+      "deterministic_total": 7,
+      "deterministic_rate": 0.857,
+      "judge_pass": 0,
+      "judge_total": 1,
+      "errors": 1,
+      "total_latency_ms": 20421,
+      "total_tokens": 28368,
+      "total_cost_usd": 0,
+      "calls": 31
+    },
+    "B5": {
+      "deterministic_pass": 7,
+      "deterministic_total": 7,
+      "deterministic_rate": 1,
+      "judge_pass": 0,
+      "judge_total": 1,
+      "errors": 0,
+      "total_latency_ms": 7219,
+      "total_tokens": 2511,
+      "total_cost_usd": 0,
+      "calls": 8
+    },
+    "B4": {
+      "deterministic_pass": 7,
+      "deterministic_total": 7,
+      "deterministic_rate": 1,
+      "judge_pass": 0,
+      "judge_total": 1,
+      "errors": 0,
+      "total_latency_ms": 2931,
+      "total_tokens": 2954,
+      "total_cost_usd": 0,
+      "calls": 8
+    }
+  },
+  "build_descriptions": {
+    "B1": "single free model (nvidia/nemotron-3-ultra-550b-a55b:free)",
+    "B2": "free ensemble across families (nvidia+google+alibaba+inclusionai+cohere), Hermes arbitrates disagreement",
+    "B3": "Hermes critique loop: frame challenges -> solve -> Hermes critiques -> revise",
+    "B4": "free-first chain (10 models) -> cheap paid fallback (cap $2)",
+    "B5": "single free stealth model (stealth/space-bunny-alpha) — the \"Space Bunny Free\" evaluation"
+  },
+  "paid_cap_usd": 2,
+  "calls_log": [
+    {
+      "model": "stealth/space-bunny-alpha",
+      "latencyMs": 1587,
+      "ok": true,
+      "status": null,
+      "tokens": 229,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop"
+    },
+    {
+      "model": "stealth/space-bunny-alpha",
+      "latencyMs": 1073,
+      "ok": true,
+      "status": null,
+      "tokens": 303,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop"
+    },
+    {
+      "model": "stealth/space-bunny-alpha",
+      "latencyMs": 740,
+      "ok": true,
+      "status": null,
+      "tokens": 328,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop"
+    },
+    {
+      "model": "stealth/space-bunny-alpha",
+      "latencyMs": 717,
+      "ok": true,
+      "status": null,
+      "tokens": 423,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop"
+    },
+    {
+      "model": "stealth/space-bunny-alpha",
+      "latencyMs": 653,
+      "ok": true,
+      "status": null,
+      "tokens": 303,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop"
+    },
+    {
+      "model": "stealth/space-bunny-alpha",
+      "latencyMs": 873,
+      "ok": true,
+      "status": null,
+      "tokens": 228,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop"
+    },
+    {
+      "model": "stealth/space-bunny-alpha",
+      "latencyMs": 594,
+      "ok": true,
+      "status": null,
+      "tokens": 251,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop"
+    },
+    {
+      "model": "stealth/space-bunny-alpha",
+      "latencyMs": 982,
+      "ok": true,
+      "status": null,
+      "tokens": 446,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "latencyMs": 96659,
+      "ok": false,
+      "status": 200,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": null
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "latencyMs": 120009,
+      "ok": false,
+      "status": null,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "timeout 120000ms",
+      "attempt": 2,
+      "finishReason": null
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 351,
+      "ok": true,
+      "status": null,
+      "tokens": 227,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:16:32.281Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 423,
+      "ok": true,
+      "status": null,
+      "tokens": 270,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:16:32.282Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 345,
+      "ok": false,
+      "status": 200,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:16:32.282Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 353,
+      "ok": true,
+      "status": null,
+      "tokens": 499,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 2,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:16:32.282Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 426,
+      "ok": false,
+      "status": 200,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:16:32.282Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 348,
+      "ok": true,
+      "status": null,
+      "tokens": 313,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 2,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:16:32.282Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 345,
+      "ok": true,
+      "status": null,
+      "tokens": 420,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:16:32.282Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 419,
+      "ok": false,
+      "status": 200,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:16:32.282Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 343,
+      "ok": true,
+      "status": null,
+      "tokens": 195,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 2,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:16:32.282Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 421,
+      "ok": true,
+      "status": null,
+      "tokens": 363,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:16:32.282Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 347,
+      "ok": true,
+      "status": null,
+      "tokens": 667,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:16:32.282Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "latencyMs": 55393,
+      "ok": false,
+      "status": 200,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:16:32.282Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "latencyMs": 51377,
+      "ok": true,
+      "status": null,
+      "tokens": 2701,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 2,
+      "finishReason": "length",
+      "run": "2026-09-26T01:16:32.282Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-sante:free",
+      "latencyMs": 903,
+      "ok": true,
+      "status": null,
+      "tokens": 66,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-sante:free",
+      "latencyMs": 751,
+      "ok": true,
+      "status": null,
+      "tokens": 66,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-sante:free",
+      "latencyMs": 699,
+      "ok": true,
+      "status": null,
+      "tokens": 66,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-fin:free",
+      "latencyMs": 642,
+      "ok": false,
+      "status": 200,
+      "tokens": 67,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-fin:free",
+      "latencyMs": 641,
+      "ok": false,
+      "status": 200,
+      "tokens": 67,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-fin:free",
+      "latencyMs": 1010,
+      "ok": false,
+      "status": 200,
+      "tokens": 67,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "qwen/qwen3.8-27b:free",
+      "latencyMs": 200,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "qwen/qwen3.8-27b:free",
+      "latencyMs": 323,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "qwen/qwen3.8-27b:free",
+      "latencyMs": 372,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "latencyMs": 638,
+      "ok": false,
+      "status": 200,
+      "tokens": 60,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "latencyMs": 641,
+      "ok": true,
+      "status": null,
+      "tokens": 60,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "latencyMs": 643,
+      "ok": false,
+      "status": 200,
+      "tokens": 60,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "liquid/lfm-2.5-2.6b:free",
+      "latencyMs": 308,
+      "ok": false,
+      "status": 200,
+      "tokens": 57,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "liquid/lfm-2.5-2.6b:free",
+      "latencyMs": 378,
+      "ok": true,
+      "status": null,
+      "tokens": 57,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "liquid/lfm-2.5-2.6b:free",
+      "latencyMs": 236,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "latencyMs": 60007,
+      "ok": false,
+      "status": null,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "timeout 60000ms",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "latencyMs": 60011,
+      "ok": false,
+      "status": null,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "timeout 60000ms",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "latencyMs": 55318,
+      "ok": true,
+      "status": null,
+      "tokens": 63,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "thinkingmachines/inkling-small:free",
+      "latencyMs": 164,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "thinkingmachines/inkling-small:free",
+      "latencyMs": 45,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "thinkingmachines/inkling-small:free",
+      "latencyMs": 41,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "poolside/laguna-s-2.1:free",
+      "latencyMs": 195,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "poolside/laguna-s-2.1:free",
+      "latencyMs": 331,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "poolside/laguna-s-2.1:free",
+      "latencyMs": 724,
+      "ok": true,
+      "status": null,
+      "tokens": 53,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "thinkingmachines/inkling:free",
+      "latencyMs": 41,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "thinkingmachines/inkling:free",
+      "latencyMs": 102,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "thinkingmachines/inkling:free",
+      "latencyMs": 46,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "poolside/laguna-xs-2.1:free",
+      "latencyMs": 205,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "poolside/laguna-xs-2.1:free",
+      "latencyMs": 199,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "poolside/laguna-xs-2.1:free",
+      "latencyMs": 189,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "cohere/north-mini-code:free",
+      "latencyMs": 495,
+      "ok": false,
+      "status": 200,
+      "tokens": 47,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "cohere/north-mini-code:free",
+      "latencyMs": 350,
+      "ok": true,
+      "status": null,
+      "tokens": 34,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "cohere/north-mini-code:free",
+      "latencyMs": 256,
+      "ok": false,
+      "status": 200,
+      "tokens": 46,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-content-safety:free",
+      "latencyMs": 200,
+      "ok": false,
+      "status": 200,
+      "tokens": 509,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-content-safety:free",
+      "latencyMs": 125,
+      "ok": false,
+      "status": 200,
+      "tokens": 509,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-content-safety:free",
+      "latencyMs": 207,
+      "ok": false,
+      "status": 200,
+      "tokens": 509,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 336,
+      "ok": false,
+      "status": 200,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 333,
+      "ok": true,
+      "status": null,
+      "tokens": 39,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 336,
+      "ok": false,
+      "status": 200,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "latencyMs": 186,
+      "ok": true,
+      "status": null,
+      "tokens": 80,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "latencyMs": 168,
+      "ok": false,
+      "status": 200,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "latencyMs": 171,
+      "ok": true,
+      "status": null,
+      "tokens": 77,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "latencyMs": 112,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "latencyMs": 247,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "latencyMs": 116,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "google/gemma-4-31b-it:free",
+      "latencyMs": 116,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "google/gemma-4-31b-it:free",
+      "latencyMs": 114,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "google/gemma-4-31b-it:free",
+      "latencyMs": 118,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "latencyMs": 44,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "latencyMs": 48,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "latencyMs": 45,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:34.417Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-sante:free",
+      "latencyMs": 658,
+      "ok": true,
+      "status": null,
+      "tokens": 66,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-sante:free",
+      "latencyMs": 55,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-sante:free",
+      "latencyMs": 926,
+      "ok": true,
+      "status": null,
+      "tokens": 66,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-fin:free",
+      "latencyMs": 51,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-fin:free",
+      "latencyMs": 46,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-fin:free",
+      "latencyMs": 48,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "qwen/qwen3.8-27b:free",
+      "latencyMs": 46,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "qwen/qwen3.8-27b:free",
+      "latencyMs": 48,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "qwen/qwen3.8-27b:free",
+      "latencyMs": 46,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "latencyMs": 45,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "latencyMs": 45,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "latencyMs": 48,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "liquid/lfm-2.5-2.6b:free",
+      "latencyMs": 53,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "liquid/lfm-2.5-2.6b:free",
+      "latencyMs": 54,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "liquid/lfm-2.5-2.6b:free",
+      "latencyMs": 45,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "latencyMs": 46,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "latencyMs": 50,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "latencyMs": 46,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "thinkingmachines/inkling-small:free",
+      "latencyMs": 46,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "thinkingmachines/inkling-small:free",
+      "latencyMs": 44,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "thinkingmachines/inkling-small:free",
+      "latencyMs": 48,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "poolside/laguna-s-2.1:free",
+      "latencyMs": 45,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "poolside/laguna-s-2.1:free",
+      "latencyMs": 49,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "poolside/laguna-s-2.1:free",
+      "latencyMs": 48,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "thinkingmachines/inkling:free",
+      "latencyMs": 44,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "thinkingmachines/inkling:free",
+      "latencyMs": 47,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "thinkingmachines/inkling:free",
+      "latencyMs": 46,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "poolside/laguna-xs-2.1:free",
+      "latencyMs": 46,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "poolside/laguna-xs-2.1:free",
+      "latencyMs": 51,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "poolside/laguna-xs-2.1:free",
+      "latencyMs": 45,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "cohere/north-mini-code:free",
+      "latencyMs": 47,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "cohere/north-mini-code:free",
+      "latencyMs": 229,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "cohere/north-mini-code:free",
+      "latencyMs": 45,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-content-safety:free",
+      "latencyMs": 46,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-content-safety:free",
+      "latencyMs": 46,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-content-safety:free",
+      "latencyMs": 46,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 46,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 46,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 44,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "latencyMs": 47,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "latencyMs": 44,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "latencyMs": 48,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "latencyMs": 48,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "latencyMs": 50,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "latencyMs": 45,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "google/gemma-4-31b-it:free",
+      "latencyMs": 48,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "google/gemma-4-31b-it:free",
+      "latencyMs": 53,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "google/gemma-4-31b-it:free",
+      "latencyMs": 48,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "latencyMs": 45,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "latencyMs": 46,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "latencyMs": 45,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:20:52.034Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-sante:free",
+      "latencyMs": 870,
+      "ok": true,
+      "status": null,
+      "tokens": 66,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-sante:free",
+      "latencyMs": 766,
+      "ok": true,
+      "status": null,
+      "tokens": 66,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-sante:free",
+      "latencyMs": 1551,
+      "ok": true,
+      "status": null,
+      "tokens": 66,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-fin:free",
+      "latencyMs": 758,
+      "ok": false,
+      "status": 200,
+      "tokens": 67,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-fin:free",
+      "latencyMs": 1108,
+      "ok": false,
+      "status": 200,
+      "tokens": 67,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "inclusionai/ling-3.0-flash-fin:free",
+      "latencyMs": 676,
+      "ok": false,
+      "status": 200,
+      "tokens": 67,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "qwen/qwen3.8-27b:free",
+      "latencyMs": 208,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "qwen/qwen3.8-27b:free",
+      "latencyMs": 315,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "qwen/qwen3.8-27b:free",
+      "latencyMs": 214,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "latencyMs": 675,
+      "ok": true,
+      "status": null,
+      "tokens": 60,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "latencyMs": 950,
+      "ok": true,
+      "status": null,
+      "tokens": 49,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "latencyMs": 1053,
+      "ok": true,
+      "status": null,
+      "tokens": 59,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "liquid/lfm-2.5-2.6b:free",
+      "latencyMs": 260,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "liquid/lfm-2.5-2.6b:free",
+      "latencyMs": 247,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "liquid/lfm-2.5-2.6b:free",
+      "latencyMs": 345,
+      "ok": true,
+      "status": null,
+      "tokens": 53,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "latencyMs": 60005,
+      "ok": false,
+      "status": null,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "timeout 60000ms",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "latencyMs": 50912,
+      "ok": true,
+      "status": null,
+      "tokens": 63,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "latencyMs": 34982,
+      "ok": true,
+      "status": null,
+      "tokens": 63,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "thinkingmachines/inkling-small:free",
+      "latencyMs": 52,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "thinkingmachines/inkling-small:free",
+      "latencyMs": 45,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "thinkingmachines/inkling-small:free",
+      "latencyMs": 52,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "poolside/laguna-s-2.1:free",
+      "latencyMs": 2980,
+      "ok": true,
+      "status": null,
+      "tokens": 53,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "poolside/laguna-s-2.1:free",
+      "latencyMs": 903,
+      "ok": true,
+      "status": null,
+      "tokens": 53,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "poolside/laguna-s-2.1:free",
+      "latencyMs": 9116,
+      "ok": true,
+      "status": null,
+      "tokens": 53,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "thinkingmachines/inkling:free",
+      "latencyMs": 45,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "thinkingmachines/inkling:free",
+      "latencyMs": 42,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "thinkingmachines/inkling:free",
+      "latencyMs": 44,
+      "ok": false,
+      "status": 403,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "poolside/laguna-xs-2.1:free",
+      "latencyMs": 262,
+      "ok": false,
+      "status": 200,
+      "tokens": 91,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "poolside/laguna-xs-2.1:free",
+      "latencyMs": 201,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "poolside/laguna-xs-2.1:free",
+      "latencyMs": 312,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "cohere/north-mini-code:free",
+      "latencyMs": 323,
+      "ok": true,
+      "status": null,
+      "tokens": 34,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "cohere/north-mini-code:free",
+      "latencyMs": 343,
+      "ok": true,
+      "status": null,
+      "tokens": 34,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "cohere/north-mini-code:free",
+      "latencyMs": 609,
+      "ok": true,
+      "status": null,
+      "tokens": 42,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-content-safety:free",
+      "latencyMs": 128,
+      "ok": false,
+      "status": 200,
+      "tokens": 509,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-content-safety:free",
+      "latencyMs": 128,
+      "ok": false,
+      "status": 200,
+      "tokens": 509,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-content-safety:free",
+      "latencyMs": 408,
+      "ok": false,
+      "status": 200,
+      "tokens": 509,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": "length",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 342,
+      "ok": true,
+      "status": null,
+      "tokens": 39,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 337,
+      "ok": true,
+      "status": null,
+      "tokens": 39,
+      "costUsd": 0,
+      "error": null,
+      "attempt": 1,
+      "finishReason": "stop",
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "latencyMs": 344,
+      "ok": false,
+      "status": 200,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "latencyMs": 176,
+      "ok": false,
+      "status": 200,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "latencyMs": 188,
+      "ok": false,
+      "status": 200,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "latencyMs": 180,
+      "ok": false,
+      "status": 200,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "empty content",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "latencyMs": 127,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "latencyMs": 239,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "google/gemma-4-26b-a4b-it:free",
+      "latencyMs": 117,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Provider returned error",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "google/gemma-4-31b-it:free",
+      "latencyMs": 45,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "google/gemma-4-31b-it:free",
+      "latencyMs": 48,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "google/gemma-4-31b-it:free",
+      "latencyMs": 49,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "latencyMs": 45,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "latencyMs": 45,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    },
+    {
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "latencyMs": 47,
+      "ok": false,
+      "status": 429,
+      "tokens": null,
+      "costUsd": 0,
+      "error": "Rate limit exceeded: free-models-per-min. ",
+      "attempt": 1,
+      "finishReason": null,
+      "run": "2026-09-26T01:25:39.035Z"
+    }
+  ],
+  "spend": {
+    "cap_usd": 2,
+    "total_usd": 0,
+    "paid_calls": 0,
+    "aborted": false
+  },
+  "model_probe": {
+    "generated_at": "2026-09-26T01:25:39.035Z",
+    "attempts_per_model": 3,
+    "models": {
+      "inclusionai/ling-3.0-flash-sante:free": {
+        "attempts": [
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 870
+          },
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 766
+          },
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 1551
+          }
+        ],
+        "ok": 3,
+        "fail": 0,
+        "statuses": {},
+        "success_rate": 1
+      },
+      "inclusionai/ling-3.0-flash-fin:free": {
+        "attempts": [
+          {
+            "ok": false,
+            "status": 200,
+            "error": "empty content",
+            "latencyMs": 758
+          },
+          {
+            "ok": false,
+            "status": 200,
+            "error": "empty content",
+            "latencyMs": 1108
+          },
+          {
+            "ok": false,
+            "status": 200,
+            "error": "empty content",
+            "latencyMs": 676
+          }
+        ],
+        "ok": 0,
+        "fail": 3,
+        "statuses": {
+          "200": 3
+        },
+        "success_rate": 0
+      },
+      "qwen/qwen3.8-27b:free": {
+        "attempts": [
+          {
+            "ok": false,
+            "status": 429,
+            "error": "Provider returned error",
+            "latencyMs": 208
+          },
+          {
+            "ok": false,
+            "status": 429,
+            "error": "Provider returned error",
+            "latencyMs": 315
+          },
+          {
+            "ok": false,
+            "status": 429,
+            "error": "Provider returned error",
+            "latencyMs": 214
+          }
+        ],
+        "ok": 0,
+        "fail": 3,
+        "statuses": {
+          "429": 3
+        },
+        "success_rate": 0
+      },
+      "dots-studio/dots-3-note-preview:free": {
+        "attempts": [
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 675
+          },
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 950
+          },
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 1053
+          }
+        ],
+        "ok": 3,
+        "fail": 0,
+        "statuses": {},
+        "success_rate": 1
+      },
+      "liquid/lfm-2.5-2.6b:free": {
+        "attempts": [
+          {
+            "ok": false,
+            "status": 429,
+            "error": "Provider returned error",
+            "latencyMs": 260
+          },
+          {
+            "ok": false,
+            "status": 429,
+            "error": "Provider returned error",
+            "latencyMs": 247
+          },
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 345
+          }
+        ],
+        "ok": 1,
+        "fail": 2,
+        "statuses": {
+          "429": 2
+        },
+        "success_rate": 0.333
+      },
+      "nvidia/nemotron-3.5-lightning:free": {
+        "attempts": [
+          {
+            "ok": false,
+            "status": null,
+            "error": "timeout 60000ms",
+            "latencyMs": 60005
+          },
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 50912
+          },
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 34982
+          }
+        ],
+        "ok": 2,
+        "fail": 1,
+        "statuses": {
+          "network": 1
+        },
+        "success_rate": 0.667
+      },
+      "thinkingmachines/inkling-small:free": {
+        "attempts": [
+          {
+            "ok": false,
+            "status": 403,
+            "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+            "latencyMs": 52
+          },
+          {
+            "ok": false,
+            "status": 403,
+            "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+            "latencyMs": 45
+          },
+          {
+            "ok": false,
+            "status": 403,
+            "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+            "latencyMs": 52
+          }
+        ],
+        "ok": 0,
+        "fail": 3,
+        "statuses": {
+          "403": 3
+        },
+        "success_rate": 0
+      },
+      "poolside/laguna-s-2.1:free": {
+        "attempts": [
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 2980
+          },
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 903
+          },
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 9116
+          }
+        ],
+        "ok": 3,
+        "fail": 0,
+        "statuses": {},
+        "success_rate": 1
+      },
+      "thinkingmachines/inkling:free": {
+        "attempts": [
+          {
+            "ok": false,
+            "status": 403,
+            "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+            "latencyMs": 45
+          },
+          {
+            "ok": false,
+            "status": 403,
+            "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+            "latencyMs": 42
+          },
+          {
+            "ok": false,
+            "status": 403,
+            "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+            "latencyMs": 44
+          }
+        ],
+        "ok": 0,
+        "fail": 3,
+        "statuses": {
+          "403": 3
+        },
+        "success_rate": 0
+      },
+      "poolside/laguna-xs-2.1:free": {
+        "attempts": [
+          {
+            "ok": false,
+            "status": 200,
+            "error": "empty content",
+            "latencyMs": 262
+          },
+          {
+            "ok": false,
+            "status": 429,
+            "error": "Provider returned error",
+            "latencyMs": 201
+          },
+          {
+            "ok": false,
+            "status": 429,
+            "error": "Provider returned error",
+            "latencyMs": 312
+          }
+        ],
+        "ok": 0,
+        "fail": 3,
+        "statuses": {
+          "200": 1,
+          "429": 2
+        },
+        "success_rate": 0
+      },
+      "cohere/north-mini-code:free": {
+        "attempts": [
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 323
+          },
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 343
+          },
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 609
+          }
+        ],
+        "ok": 3,
+        "fail": 0,
+        "statuses": {},
+        "success_rate": 1
+      },
+      "nvidia/nemotron-3.5-content-safety:free": {
+        "attempts": [
+          {
+            "ok": false,
+            "status": 200,
+            "error": "empty content",
+            "latencyMs": 128
+          },
+          {
+            "ok": false,
+            "status": 200,
+            "error": "empty content",
+            "latencyMs": 128
+          },
+          {
+            "ok": false,
+            "status": 200,
+            "error": "empty content",
+            "latencyMs": 408
+          }
+        ],
+        "ok": 0,
+        "fail": 3,
+        "statuses": {
+          "200": 3
+        },
+        "success_rate": 0
+      },
+      "nvidia/nemotron-3-ultra-550b-a55b:free": {
+        "attempts": [
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 342
+          },
+          {
+            "ok": true,
+            "status": null,
+            "error": null,
+            "latencyMs": 337
+          },
+          {
+            "ok": false,
+            "status": 200,
+            "error": "empty content",
+            "latencyMs": 344
+          }
+        ],
+        "ok": 2,
+        "fail": 1,
+        "statuses": {
+          "200": 1
+        },
+        "success_rate": 0.667
+      },
+      "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": {
+        "attempts": [
+          {
+            "ok": false,
+            "status": 200,
+            "error": "empty content",
+            "latencyMs": 176
+          },
+          {
+            "ok": false,
+            "status": 200,
+            "error": "empty content",
+            "latencyMs": 188
+          },
+          {
+            "ok": false,
+            "status": 200,
+            "error": "empty content",
+            "latencyMs": 180
+          }
+        ],
+        "ok": 0,
+        "fail": 3,
+        "statuses": {
+          "200": 3
+        },
+        "success_rate": 0
+      },
+      "google/gemma-4-26b-a4b-it:free": {
+        "attempts": [
+          {
+            "ok": false,
+            "status": 429,
+            "error": "Provider returned error",
+            "latencyMs": 127
+          },
+          {
+            "ok": false,
+            "status": 429,
+            "error": "Provider returned error",
+            "latencyMs": 239
+          },
+          {
+            "ok": false,
+            "status": 429,
+            "error": "Provider returned error",
+            "latencyMs": 117
+          }
+        ],
+        "ok": 0,
+        "fail": 3,
+        "statuses": {
+          "429": 3
+        },
+        "success_rate": 0
+      },
+      "google/gemma-4-31b-it:free": {
+        "attempts": [
+          {
+            "ok": false,
+            "status": 429,
+            "error": "Rate limit exceeded: free-models-per-min. ",
+            "latencyMs": 45
+          },
+          {
+            "ok": false,
+            "status": 429,
+            "error": "Rate limit exceeded: free-models-per-min. ",
+            "latencyMs": 48
+          },
+          {
+            "ok": false,
+            "status": 429,
+            "error": "Rate limit exceeded: free-models-per-min. ",
+            "latencyMs": 49
+          }
+        ],
+        "ok": 0,
+        "fail": 3,
+        "statuses": {
+          "429": 3
+        },
+        "success_rate": 0
+      },
+      "nvidia/nemotron-3-super-120b-a12b:free": {
+        "attempts": [
+          {
+            "ok": false,
+            "status": 429,
+            "error": "Rate limit exceeded: free-models-per-min. ",
+            "latencyMs": 45
+          },
+          {
+            "ok": false,
+            "status": 429,
+            "error": "Rate limit exceeded: free-models-per-min. ",
+            "latencyMs": 45
+          },
+          {
+            "ok": false,
+            "status": 429,
+            "error": "Rate limit exceeded: free-models-per-min. ",
+            "latencyMs": 47
+          }
+        ],
+        "ok": 0,
+        "fail": 3,
+        "statuses": {
+          "429": 3
+        },
+        "success_rate": 0
+      }
+    }
+  },
+  "model_probes": [
+    {
+      "generated_at": "2026-09-26T01:20:52.034Z",
+      "attempts_per_model": 3,
+      "models": {
+        "inclusionai/ling-3.0-flash-sante:free": {
+          "attempts": [
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 658
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 55
+            },
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 926
+            }
+          ],
+          "ok": 2,
+          "fail": 1,
+          "statuses": {
+            "429": 1
+          },
+          "success_rate": 0.667
+        },
+        "inclusionai/ling-3.0-flash-fin:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 51
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 46
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 48
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        },
+        "qwen/qwen3.8-27b:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 46
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 48
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 46
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        },
+        "dots-studio/dots-3-note-preview:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 45
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 45
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 48
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        },
+        "liquid/lfm-2.5-2.6b:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 53
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 54
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 45
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        },
+        "nvidia/nemotron-3.5-lightning:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 46
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 50
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 46
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        },
+        "thinkingmachines/inkling-small:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 403,
+              "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+              "latencyMs": 46
+            },
+            {
+              "ok": false,
+              "status": 403,
+              "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+              "latencyMs": 44
+            },
+            {
+              "ok": false,
+              "status": 403,
+              "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+              "latencyMs": 48
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "403": 3
+          },
+          "success_rate": 0
+        },
+        "poolside/laguna-s-2.1:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 45
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 49
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 48
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        },
+        "thinkingmachines/inkling:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 403,
+              "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+              "latencyMs": 44
+            },
+            {
+              "ok": false,
+              "status": 403,
+              "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+              "latencyMs": 47
+            },
+            {
+              "ok": false,
+              "status": 403,
+              "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+              "latencyMs": 46
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "403": 3
+          },
+          "success_rate": 0
+        },
+        "poolside/laguna-xs-2.1:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 46
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 51
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 45
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        },
+        "cohere/north-mini-code:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 47
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 229
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 45
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        },
+        "nvidia/nemotron-3.5-content-safety:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 46
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 46
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 46
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        },
+        "nvidia/nemotron-3-ultra-550b-a55b:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 46
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 46
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 44
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        },
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 47
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 44
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 48
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        },
+        "google/gemma-4-26b-a4b-it:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 48
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 50
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 45
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        },
+        "google/gemma-4-31b-it:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 48
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 53
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 48
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        },
+        "nvidia/nemotron-3-super-120b-a12b:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 45
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 46
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 45
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        }
+      }
+    },
+    {
+      "generated_at": "2026-09-26T01:25:39.035Z",
+      "attempts_per_model": 3,
+      "models": {
+        "inclusionai/ling-3.0-flash-sante:free": {
+          "attempts": [
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 870
+            },
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 766
+            },
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 1551
+            }
+          ],
+          "ok": 3,
+          "fail": 0,
+          "statuses": {},
+          "success_rate": 1
+        },
+        "inclusionai/ling-3.0-flash-fin:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 200,
+              "error": "empty content",
+              "latencyMs": 758
+            },
+            {
+              "ok": false,
+              "status": 200,
+              "error": "empty content",
+              "latencyMs": 1108
+            },
+            {
+              "ok": false,
+              "status": 200,
+              "error": "empty content",
+              "latencyMs": 676
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "200": 3
+          },
+          "success_rate": 0
+        },
+        "qwen/qwen3.8-27b:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Provider returned error",
+              "latencyMs": 208
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Provider returned error",
+              "latencyMs": 315
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Provider returned error",
+              "latencyMs": 214
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        },
+        "dots-studio/dots-3-note-preview:free": {
+          "attempts": [
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 675
+            },
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 950
+            },
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 1053
+            }
+          ],
+          "ok": 3,
+          "fail": 0,
+          "statuses": {},
+          "success_rate": 1
+        },
+        "liquid/lfm-2.5-2.6b:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Provider returned error",
+              "latencyMs": 260
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Provider returned error",
+              "latencyMs": 247
+            },
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 345
+            }
+          ],
+          "ok": 1,
+          "fail": 2,
+          "statuses": {
+            "429": 2
+          },
+          "success_rate": 0.333
+        },
+        "nvidia/nemotron-3.5-lightning:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": null,
+              "error": "timeout 60000ms",
+              "latencyMs": 60005
+            },
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 50912
+            },
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 34982
+            }
+          ],
+          "ok": 2,
+          "fail": 1,
+          "statuses": {
+            "network": 1
+          },
+          "success_rate": 0.667
+        },
+        "thinkingmachines/inkling-small:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 403,
+              "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+              "latencyMs": 52
+            },
+            {
+              "ok": false,
+              "status": 403,
+              "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+              "latencyMs": 45
+            },
+            {
+              "ok": false,
+              "status": 403,
+              "error": "thinkingmachines/inkling-small:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+              "latencyMs": 52
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "403": 3
+          },
+          "success_rate": 0
+        },
+        "poolside/laguna-s-2.1:free": {
+          "attempts": [
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 2980
+            },
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 903
+            },
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 9116
+            }
+          ],
+          "ok": 3,
+          "fail": 0,
+          "statuses": {},
+          "success_rate": 1
+        },
+        "thinkingmachines/inkling:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 403,
+              "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+              "latencyMs": 45
+            },
+            {
+              "ok": false,
+              "status": 403,
+              "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+              "latencyMs": 42
+            },
+            {
+              "ok": false,
+              "status": 403,
+              "error": "thinkingmachines/inkling:free is only available on agentic harnesses. Try plugging it into a coding agent or productivity app listed on https://openrouter.ai/apps",
+              "latencyMs": 44
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "403": 3
+          },
+          "success_rate": 0
+        },
+        "poolside/laguna-xs-2.1:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 200,
+              "error": "empty content",
+              "latencyMs": 262
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Provider returned error",
+              "latencyMs": 201
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Provider returned error",
+              "latencyMs": 312
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "200": 1,
+            "429": 2
+          },
+          "success_rate": 0
+        },
+        "cohere/north-mini-code:free": {
+          "attempts": [
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 323
+            },
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 343
+            },
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 609
+            }
+          ],
+          "ok": 3,
+          "fail": 0,
+          "statuses": {},
+          "success_rate": 1
+        },
+        "nvidia/nemotron-3.5-content-safety:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 200,
+              "error": "empty content",
+              "latencyMs": 128
+            },
+            {
+              "ok": false,
+              "status": 200,
+              "error": "empty content",
+              "latencyMs": 128
+            },
+            {
+              "ok": false,
+              "status": 200,
+              "error": "empty content",
+              "latencyMs": 408
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "200": 3
+          },
+          "success_rate": 0
+        },
+        "nvidia/nemotron-3-ultra-550b-a55b:free": {
+          "attempts": [
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 342
+            },
+            {
+              "ok": true,
+              "status": null,
+              "error": null,
+              "latencyMs": 337
+            },
+            {
+              "ok": false,
+              "status": 200,
+              "error": "empty content",
+              "latencyMs": 344
+            }
+          ],
+          "ok": 2,
+          "fail": 1,
+          "statuses": {
+            "200": 1
+          },
+          "success_rate": 0.667
+        },
+        "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 200,
+              "error": "empty content",
+              "latencyMs": 176
+            },
+            {
+              "ok": false,
+              "status": 200,
+              "error": "empty content",
+              "latencyMs": 188
+            },
+            {
+              "ok": false,
+              "status": 200,
+              "error": "empty content",
+              "latencyMs": 180
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "200": 3
+          },
+          "success_rate": 0
+        },
+        "google/gemma-4-26b-a4b-it:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Provider returned error",
+              "latencyMs": 127
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Provider returned error",
+              "latencyMs": 239
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Provider returned error",
+              "latencyMs": 117
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        },
+        "google/gemma-4-31b-it:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 45
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 48
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 49
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        },
+        "nvidia/nemotron-3-super-120b-a12b:free": {
+          "attempts": [
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 45
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 45
+            },
+            {
+              "ok": false,
+              "status": 429,
+              "error": "Rate limit exceeded: free-models-per-min. ",
+              "latencyMs": 47
+            }
+          ],
+          "ok": 0,
+          "fail": 3,
+          "statuses": {
+            "429": 3
+          },
+          "success_rate": 0
+        }
+      }
+    }
+  ]
+}
