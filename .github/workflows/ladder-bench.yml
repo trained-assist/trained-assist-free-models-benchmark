@@ -1,0 +1,52 @@
+name: ladder-bench
+# Continuous benchmark of our LLM API (trained-assist-llm-ladder worker): every rung of every
+# ladder pinned + each ladder as clients see it. Results: step summary, artifact, and a comment
+# on the tracking issue #3. A red run = a ladder failed ping/JSON as a client would see it.
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      quick:
+        description: 'Quick (ping/json/tool only)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - name: Run ladder bench
+        id: bench
+        env:
+          LLM_LADDER_TOKEN: ${{ secrets.LLM_LADDER_TOKEN }}
+        run: |
+          set +e
+          node scripts/ladder-bench.mjs ${{ inputs.quick && '--quick' || '' }} > bench.md
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          cat bench.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ladder-bench-${{ github.run_id }}
+          path: |
+            results/ladder-bench-latest.json
+            bench.md
+      - name: Comment on tracking issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          { cat bench.md; echo; echo "[run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"; } > comment.md
+          gh issue comment 3 -R "${{ github.repository }}" --body-file comment.md
+      - name: Fail if a ladder is down
+        if: steps.bench.outputs.code != '0'
+        run: exit 1

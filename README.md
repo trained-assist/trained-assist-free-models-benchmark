@@ -21,6 +21,20 @@ need a model that reliably gets to a green CI.
 - **Consequence:** the foundation should be **opencode-free (Zen/Go)**. OpenRouter free is
   at most a far fallback rung, never the base.
 
+## Continuous bench of our LLM API
+
+`scripts/ladder-bench.mjs` benchmarks the **trained-assist-llm-ladder** worker
+(`https://llm-ladder.trainedassist.store`) — the API every trained-assist service call and
+pr-autofix go through. Every rung of every ladder is pinned via `ladder_rung` (no failover), then
+each ladder runs as clients see it; tasks = ping, JSON mode, a tool call, plus the 3 inputs in
+`data/avg-inputs.json`, each with a shape check. `.github/workflows/ladder-bench.yml` runs it every
+6 hours (and on demand) and posts the table to issue #3. Provider keys stay in the worker — the
+bench only needs `LLM_LADDER_TOKEN` (org secret).
+
+```bash
+LLM_LADDER_TOKEN=... node scripts/ladder-bench.mjs [--quick] [--ladders deepseek,free]
+```
+
 ## Layout
 
 ```
