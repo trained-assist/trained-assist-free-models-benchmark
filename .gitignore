@@ -7,3 +7,7 @@ research/tasks-raw.json
 actionlint
 *.patch
 attempt-*.json
+
+# ladder-bench run output (CI publishes it as artifact + issue #3 comment)
+results/ladder-bench-latest.json
+results/ladder-bench-history.jsonl
