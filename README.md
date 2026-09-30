@@ -27,7 +27,12 @@ need a model that reliably gets to a green CI.
 (`https://llm-ladder.trainedassist.store`) — the API every trained-assist service call and
 pr-autofix go through. Every rung of every ladder is pinned via `ladder_rung` (no failover), then
 each ladder runs as clients see it; tasks = ping, JSON mode, a tool call, plus the 3 inputs in
-`data/avg-inputs.json`, each with a shape check. `.github/workflows/ladder-bench.yml` runs it every
+`data/avg-inputs.json`. Quality (#5), not just shape: the two code tasks are **executed**
+(temp file, `node`, 6s cap) against the cases the prompt promises — a keyword mention no longer
+passes; `agent-plan` is graded by an LLM judge (rung-pinned `opencode-go/mimo-v2.6-flash`,
+rubric = the task's `expect`) → `q0–2` in the cell. Every rung row carries a tier icon
+(💚 free / 💛 subscription / 🔴 paid) with a per-tier rollup on top. A run is red when a ladder
+fails ping/JSON as a client would see it. `.github/workflows/ladder-bench.yml` runs it every
 6 hours (and on demand) and posts the table to issue #3. Provider keys stay in the worker — the
 bench only needs `LLM_LADDER_TOKEN` (org secret).
 
