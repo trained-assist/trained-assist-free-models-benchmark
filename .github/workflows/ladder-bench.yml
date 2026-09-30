@@ -19,7 +19,9 @@ permissions:
 jobs:
   bench:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    # quality checks (#5): 40 rungs ×6 tasks + LLM judge calls + agent-plan 45s timeouts — the
+    # old 45m cap cancelled a healthy full run at the very end (run 36760976565).
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
