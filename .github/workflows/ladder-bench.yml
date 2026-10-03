@@ -11,6 +11,10 @@ on:
         description: 'Quick (ping/json/tool only)'
         type: boolean
         default: false
+      ladders:
+        description: 'Comma-separated ladder ids (empty = all)'
+        type: string
+        default: ''
 
 permissions:
   contents: read
@@ -32,7 +36,9 @@ jobs:
           LLM_LADDER_TOKEN: ${{ secrets.LLM_LADDER_TOKEN }}
         run: |
           set +e
-          node scripts/ladder-bench.mjs ${{ inputs.quick && '--quick' || '' }} > bench.md
+          node scripts/ladder-bench.mjs \
+            ${{ inputs.quick && '--quick' || '' }} \
+            ${{ inputs.ladders && format('--ladders {0}', inputs.ladders) || '' }} > bench.md
           echo "code=$?" >> "$GITHUB_OUTPUT"
           cat bench.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
