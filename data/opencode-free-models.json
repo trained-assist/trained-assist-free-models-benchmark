@@ -149,7 +149,7 @@
       "id": "mimo-v2.6-flash-free",
       "provider": "opencode",
       "base": "https://opencode.ai/zen/v1",
-      "ctx": 200000,
+      "ctx": 1048576,
       "reasoning": true,
       "name": "MiMo-V2.6-Flash Free"
     },
@@ -165,7 +165,7 @@
       "id": "mimo-v2.5-free",
       "provider": "opencode",
       "base": "https://opencode.ai/zen/v1",
-      "ctx": 200000,
+      "ctx": 1048576,
       "reasoning": true,
       "name": "MiMo V2.5 Free"
     },
@@ -205,7 +205,7 @@
       "id": "nemotron-3.5-lightning-free",
       "provider": "opencode",
       "base": "https://opencode.ai/zen/v1",
-      "ctx": 262144,
+      "ctx": 1000000,
       "reasoning": true,
       "name": "Nemotron 3.5 Lightning Free"
     },
@@ -237,7 +237,7 @@
       "id": "big-pickle",
       "provider": "opencode",
       "base": "https://opencode.ai/zen/v1",
-      "ctx": 200000,
+      "ctx": 262139,
       "reasoning": true,
       "name": "Big Pickle"
     },
