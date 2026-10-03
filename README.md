@@ -55,6 +55,13 @@ data/
 results/                     # script output (JSON)
 ```
 
+`ctx` in `opencode-free-models.json` is **measured live**, not copied from docs: a prompt of
+~N tokens is sent straight to zen with the validated fingerprint and the server's own cap is
+read back (`zen-limit-probe.mjs --fill-tokens`, trained-assist-llm-ladder#106). Values as of
+2026-10-03: `mimo-v2.6-flash-free` / `mimo-v2.5-free` = 1 048 576, `nemotron-3.5-lightning-free`
+= 1 000 000. `big-pickle` is **not stable** — it load-balances across backends with caps
+262 139 and ≥1M, so the file stores the guaranteed floor (262 139), not the best case.
+
 Legacy exploratory scripts and the first (superseded) benchmark live under `research/`
 (kept for provenance — see `research/RESULTS.md`).
 
