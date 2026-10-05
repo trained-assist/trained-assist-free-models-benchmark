@@ -1,5 +1,8 @@
 # trained-assist-free-models-benchmark
 
+**GCP VM exit (05.10.2026):** New work on `alesa-personal-assistent/us-central1-a/alesa-vm` is prohibited. Use serverless by default; the existing French VM only for a proven persistent or local requirement. Other Google services remain allowed. See [the exit plan](https://github.com/trained-assist/trained-agent-architecture/issues/145).
+
+
 **Tracking issue: [#2 — Benchmark: free models for real auto-fix](https://github.com/trained-assist/trained-assist-free-models-benchmark/issues/2)** (goal, checklist, open questions).
 
 Which **free** model can actually do the job? The job we care about is **auto-fix**:
